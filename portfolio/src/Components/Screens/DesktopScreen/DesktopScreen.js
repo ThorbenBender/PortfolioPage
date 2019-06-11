@@ -10,3 +10,5 @@ function DesktopScreen() {
     </div>
   );
 }
+
+export default DesktopScreen;

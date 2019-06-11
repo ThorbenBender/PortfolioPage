@@ -1,9 +1,10 @@
 import React from "react";
+import DesktopScreen from "./Components/Screens/DesktopScreen/DesktopScreen";
 
 function App() {
   return (
     <div>
-      <p>Hello</p>
+      <DesktopScreen />
     </div>
   );
 }

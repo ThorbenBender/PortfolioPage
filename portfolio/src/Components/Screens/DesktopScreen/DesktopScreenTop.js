@@ -1,10 +1,16 @@
 import React from "react";
 import DesktopShortcut from "../../Reusable-Components/Shortcuts/DesktopShortCut";
+import OpenFolder from "../../Icons/OpenFolder.png";
+import AboutMe from "../../Icons/AboutMe.png";
+import ContactInfo from "../../Icons/ContactInfo.png";
 
 function DesktopScreenTop() {
   return (
     <div>
-      <DesktopShortcut />
+      <DesktopShortcut imgSource={OpenFolder} imgAlt="Projects Folder" shortcutName="Projects" />
+      <DesktopShortcut imgSource={AboutMe} imgAlt="About Me" shortcutName="About Me" />
+      <DesktopShortcut imgSource={ContactInfo} imgAlt="Contact Info" shortcutName="Contact Info" />
+      <DesktopShortcut imgSource={OpenFolder} imgAlt="Perfect Fit Game" shortcutName="Perfect Fit" />
     </div>
   );
 }
