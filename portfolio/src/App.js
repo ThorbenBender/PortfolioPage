@@ -1,11 +1,13 @@
 import React from "react";
-import "./App.css";
+import store from "./Store/Store";
+import { Provider } from "react-redux";
+import MainScreen from "./Components/Screens/MainScreen";
 
 function App() {
   return (
-    <div className="App">
-      <p>Hello</p>
-    </div>
+    <Provider store={store}>
+      <MainScreen />
+    </Provider>
   );
 }
 
