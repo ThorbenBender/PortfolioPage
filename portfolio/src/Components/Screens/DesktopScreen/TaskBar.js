@@ -6,7 +6,7 @@ function TaskBar() {
       <WindowsButton />
       <InterviewPlanner />
       <ContactMe />
-      <Time />
+      <TimeDisplay />
     </div>
   );
 }
