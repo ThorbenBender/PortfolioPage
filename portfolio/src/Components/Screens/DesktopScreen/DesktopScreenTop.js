@@ -19,7 +19,7 @@ function DesktopScreenTop() {
 export default DesktopScreenTop;
 
 const StyledDesktopScreenTop = styled.div`
-  height: 95%;
+  height: 73%;
   background: #008080;
   display: flex;
   flex-direction: column;
