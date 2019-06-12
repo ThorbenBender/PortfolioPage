@@ -1,12 +1,17 @@
 import React from "react";
 import DesktopScreen from "./Components/Screens/DesktopScreen/DesktopScreen";
+import styled from "styled-components";
 
 function App() {
   return (
-    <div>
+    <StlyedApp>
       <DesktopScreen />
-    </div>
+    </StlyedApp>
   );
 }
 
 export default App;
+
+const StlyedApp = styled.div`
+  padding: 0;
+`;
