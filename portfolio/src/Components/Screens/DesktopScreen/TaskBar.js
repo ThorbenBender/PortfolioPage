@@ -18,7 +18,8 @@ export default TaskBar;
 
 const StyledTaskBar = styled.div`
   display: flex;
-  height: 3%;
+  align-items: center;
   background: #c0c0c0;
-  border-top: 2px solid white;
+  height: 4.9%;
+  margin-top: 0.1%;
 `;

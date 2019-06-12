@@ -5,7 +5,7 @@ import WindowsLogo from "../../../Icons/WindowsLogo.png";
 function WindowsButton() {
   return (
     <StyledWindowsButton>
-      <img src={WindowsLogo} alt="WindowsLogo" />
+      <StyledWindowsLogo src={WindowsLogo} alt="WindowsLogo" />
       <p>Start</p>
     </StyledWindowsButton>
   );
@@ -13,8 +13,16 @@ function WindowsButton() {
 
 export default WindowsButton;
 
-const StyledWindowsButton = styled.button`
+const StyledWindowsButton = styled.div`
   display: flex;
   align-items: center;
-  padding: 0 1% 0 1%;
+  padding: 0 0.5% 0 0.5%;
+  height: 70%;
+  margin-left: 0.5%;
+  border: none;
+  border-style: outset;
+  border-color: white black black white;
+  border-width: 2px;
 `;
+
+const StyledWindowsLogo = styled.img``;
