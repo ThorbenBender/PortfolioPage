@@ -20,6 +20,6 @@ const StyledTaskBar = styled.div`
   display: flex;
   align-items: center;
   background: #c0c0c0;
-  height: 4.9%;
+  height: 3.9%;
   margin-top: 0.1%;
 `;
