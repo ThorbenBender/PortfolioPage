@@ -1,12 +1,15 @@
 import React from "react";
-import Application from "./Application";
+import ProjectsScreen from "../../Screens/ProjectsScreen/ProjectScreen";
+import styled from "styled-components";
 
-function ApplicationWindowScreen() {
+function ApplicationWindowScreen(props) {
   return (
-    <div>
-      <Application />
-    </div>
+    <StyledApplicationWindowScreen>{props.screen === "Projects" && <ProjectsScreen />}</StyledApplicationWindowScreen>
   );
 }
 
 export default ApplicationWindowScreen;
+
+const StyledApplicationWindowScreen = styled.div`
+  height: 80%;
+`;

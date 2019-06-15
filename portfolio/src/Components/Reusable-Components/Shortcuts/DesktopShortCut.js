@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 function DesktopShortCut(props) {
   return (
-    <StyledDesktopShortCut>
+    <StyledDesktopShortCut onClick={props.onClick}>
       <StyledShortcutIcon src={props.imgSource} alt={props.imgAlt} />
       <StyledShortCutName>{props.shortcutName}</StyledShortCutName>
     </StyledDesktopShortCut>

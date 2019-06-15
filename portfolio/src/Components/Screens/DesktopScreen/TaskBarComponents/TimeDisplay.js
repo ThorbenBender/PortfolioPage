@@ -52,7 +52,7 @@ class TimeDisplay extends React.Component {
             marginBottom: "3vh",
             fontSize: ".9rem"
           }}
-          offsetY="12"
+          offsetY={12}
           arrow={false}>
           {!this.state.showDate && <StyledFullDate>{this.state.date}</StyledFullDate>}
         </Popup>
