@@ -64,7 +64,8 @@ class TimeDisplay extends React.Component {
 export default TimeDisplay;
 
 const StyledTimeDisplay = styled.div`
-  margin-left: 87vw;
+  margin-left: auto;
+  margin-right: 2vw;
 `;
 
 const StyledTime = styled.p``;

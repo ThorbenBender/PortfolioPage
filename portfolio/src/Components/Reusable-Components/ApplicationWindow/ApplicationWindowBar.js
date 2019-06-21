@@ -8,11 +8,15 @@ function ApplicationWindowBar(props) {
     <StyledApplicationWindowBar>
       <StyledApplicationNameIcon src={props.icon} alt={props.iconAlt} />
       <StyledApplicationName>{props.applicationName}</StyledApplicationName>
-      <StyledApplicationWindowBarIcon src={minimizeIcon} alt="minimize window icon" />
+      <StyledApplicationWindowBarIcon
+        src={minimizeIcon}
+        alt="minimize window icon"
+        onClick={() => props.hideApplication(props.applicationName)}
+      />
       <StyledApplicationWindowBarIcon
         src={closeIcon}
         alt="close window icon"
-        onClick={() => props.closeModal("Projects")}
+        onClick={() => props.closeModal(props.applicationName)}
       />
     </StyledApplicationWindowBar>
   );

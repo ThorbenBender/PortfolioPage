@@ -1,10 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import SmallClosedFolder from "../../Icons/smallClosedFolder.png";
 
 function TableBodyRow(props) {
   return (
-    <StyledTableBodyRow>
-      <StyledTableBodyData>{props.project.name}</StyledTableBodyData>
+    <StyledTableBodyRow onClick={() => props.openFolder(props.project.name)}>
+      <StyledTableBodyData>
+        <StyledClosedFolderIcon src={SmallClosedFolder} alt="Project Folder Icon" />
+        {props.project.name}
+      </StyledTableBodyData>
       <StyledTableBodyData>{props.project.createdAt}</StyledTableBodyData>
       <StyledTableBodyData>{props.project.team}</StyledTableBodyData>
       <StyledTableBodyData>{props.project.duration}</StyledTableBodyData>
@@ -15,10 +19,15 @@ function TableBodyRow(props) {
 export default TableBodyRow;
 
 const StyledTableBodyRow = styled.tr`
-  border-bottom: 1px solid grey;
+  border: none;
 `;
 
 const StyledTableBodyData = styled.td`
-  color: blue;
   height: 1vh;
+  text-align: start;
+  vertical-align: center;
+`;
+
+const StyledClosedFolderIcon = styled.img`
+  margin-right: 0.2vw;
 `;

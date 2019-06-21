@@ -3,18 +3,22 @@ import ApplicationWindowBar from "../Reusable-Components/ApplicationWindow/Appli
 import ApplicationWindowScreen from "../Reusable-Components/ApplicationWindow/ApplicationWindowScreen";
 import styled from "styled-components";
 
-function ApplicationWindow(props) {
-  return (
-    <StyledApplicationWindow>
-      <ApplicationWindowBar
-        closeModal={props.closeModal}
-        applicationName={props.applicationName}
-        icon={props.icon}
-        iconAlt={props.iconAlt}
-      />
-      <ApplicationWindowScreen screen={props.applicationName} />
-    </StyledApplicationWindow>
-  );
+class ApplicationWindow extends React.Component {
+  render() {
+    const style = this.props.hiddenApplication.includes(this.props.applicationName) ? { display: "none" } : {};
+    return (
+      <StyledApplicationWindow style={style}>
+        <ApplicationWindowBar
+          closeModal={this.props.closeModal}
+          applicationName={this.props.applicationName}
+          icon={this.props.icon}
+          iconAlt={this.props.iconAlt}
+          hideApplication={this.props.hideApplication}
+        />
+        <ApplicationWindowScreen screen={this.props.applicationName} closeModal={this.props.closeModal} />
+      </StyledApplicationWindow>
+    );
+  }
 }
 
 export default ApplicationWindow;
