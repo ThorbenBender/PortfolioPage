@@ -53,6 +53,16 @@ class DesktopScreen extends React.Component {
             hiddenApplication={this.props.hiddenApplication}
           />
         )}
+        {this.props.modals.includes("About Me") && (
+          <ApplicationWindow
+            closeModal={this.props.closeModal}
+            applicationName="About Me"
+            icon={SmallQuestion}
+            iconAlt="Small Question Icon"
+            hideApplication={this.props.hideApplication}
+            hiddenApplication={this.props.hiddenApplication}
+          />
+        )}
         {console.log(this.props.modals.includes("Projects"))}
         <DesktopScreenTop showModal={this.props.showModal} />
         <TaskBar />

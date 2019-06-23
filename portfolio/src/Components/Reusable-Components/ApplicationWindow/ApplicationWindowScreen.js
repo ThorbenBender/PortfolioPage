@@ -2,6 +2,7 @@ import React from "react";
 import ProjectsScreen from "../../Screens/ProjectsScreen/ProjectScreen";
 import styled from "styled-components";
 import QuestionScreen from "../../Screens/QuestionScreen/QuestionScreen";
+import AboutMeScreen from "../../Screens/AboutMe/AboutMeScreen";
 import { connect } from "react-redux";
 import { compose, bindActionCreators } from "redux";
 
@@ -18,6 +19,7 @@ function ApplicationWindowScreen(props) {
       {props.screen === "Questions Guidr" && (
         <QuestionScreen screen={props.screen} QuestionScreen="Guidr" closeModal={props.closeModal} />
       )}
+      {props.screen === "About Me" && <AboutMeScreen screen={props.screen} />}
     </StyledApplicationWindowScreen>
   );
 }

@@ -8,12 +8,21 @@ class QuestionScreen extends React.Component {
   state = {
     computerAnswer: [],
     inputValue: "",
-    directory: ""
+    directory: "",
+    doneTyping: true
   };
   componentDidMount = () => {
     this.setState(st => ({
       computerAnswer: [Answers[this.props.QuestionScreen].introduction]
     }));
+  };
+
+  doneTyping = () => {
+    this.setState({ doneTyping: true });
+  };
+
+  startTyping = () => {
+    this.setState({ doneTyping: false });
   };
 
   onChangeHandler = event => {
@@ -52,15 +61,22 @@ class QuestionScreen extends React.Component {
     }
     this.setState({ inputValue: "" });
   };
+
   render() {
+    const style = this.state.doneTyping ? { transition: "ease-in 4s" } : { display: "none" };
     return (
       <StyledQuestionScreen>
         <StyledComputerAnswers>
           {this.state.computerAnswer.map(answer => (
-            <AnswerScreen answer={answer} QuestionScreen={this.props.QuestionScreen} />
+            <AnswerScreen
+              answer={answer}
+              QuestionScreen={this.props.QuestionScreen}
+              doneTyping={this.doneTyping}
+              startTyping={this.startTyping}
+            />
           ))}
         </StyledComputerAnswers>
-        <StyledForm onSubmit={this.askQuestion}>
+        <StyledForm onSubmit={this.askQuestion} style={style}>
           <StyledUserName>
             User <StyledRightArrow src={RightArrow} alt="Right Arrow" />
           </StyledUserName>
