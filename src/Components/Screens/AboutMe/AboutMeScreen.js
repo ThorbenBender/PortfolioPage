@@ -25,7 +25,7 @@ export default function AboutMeScreen() {
         </StyledInformationLink>
       </StyledInformationLinks>
       <StyledContactMeContainer>
-        <StyledContactMe>You can as well just contact me, by clicking here</StyledContactMe>
+        <StyledContactMe>You can contact me by pressing the button here</StyledContactMe>
         <StyledContactMeLink>Contact Me</StyledContactMeLink>
       </StyledContactMeContainer>
     </StyledAboutMeScreen>
