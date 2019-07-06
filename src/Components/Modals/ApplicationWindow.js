@@ -4,10 +4,14 @@ import ApplicationWindowScreen from "../Reusable-Components/ApplicationWindow/Ap
 import styled from "styled-components";
 
 class ApplicationWindow extends React.Component {
+  onDragStart = (ev, id) => {
+    console.log('dragstart:', id);
+    ev.dataTransfer.setData("id", id)
+  }
   render() {
     const style = this.props.hiddenApplication.includes(this.props.applicationName) ? { display: "none" } : {};
     return (
-      <StyledApplicationWindow style={style}>
+      <StyledApplicationWindow key={this.props.applicationName} style={style} draggable onDragStart={(e) => this.onDragStart(e, this.props.applicationName)}>
         <ApplicationWindowBar
           closeModal={this.props.closeModal}
           applicationName={this.props.applicationName}

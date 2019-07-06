@@ -8,10 +8,11 @@ import { closeModal, showModal, hideApplication } from "../../../Redux/Action/In
 import ApplicationWindow from "../../Modals/ApplicationWindow";
 import smallOpenFolder from "../../Icons/smallOpenFolder.png";
 import SmallQuestion from "../../Icons/SmallQuestion.png";
+
 class DesktopScreen extends React.Component {
   render() {
     return (
-      <StyledDesktopScreen>
+      <StyledDesktopScreen onDragOver={e => this.onDragOver(e)} onDrop={e => this.onDrop(e, "complete")}>
         {this.props.modals.includes("Projects") && (
           <ApplicationWindow
             closeModal={this.props.closeModal}
