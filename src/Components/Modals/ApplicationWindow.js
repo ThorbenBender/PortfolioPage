@@ -5,13 +5,13 @@ import styled from "styled-components";
 
 class ApplicationWindow extends React.Component {
   onDragStart = (ev, id) => {
-    console.log('dragstart:', id);
-    ev.dataTransfer.setData("id", id)
-  }
+    console.log("dragstart:", id);
+    ev.dataTransfer.setData("id", id);
+  };
   render() {
     const style = this.props.hiddenApplication.includes(this.props.applicationName) ? { display: "none" } : {};
     return (
-      <StyledApplicationWindow key={this.props.applicationName} style={style} draggable onDragStart={(e) => this.onDragStart(e, this.props.applicationName)}>
+      <StyledApplicationWindow key={this.props.applicationName} style={style}>
         <ApplicationWindowBar
           closeModal={this.props.closeModal}
           applicationName={this.props.applicationName}
