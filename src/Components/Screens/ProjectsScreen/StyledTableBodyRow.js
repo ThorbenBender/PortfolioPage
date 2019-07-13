@@ -20,6 +20,7 @@ export default TableBodyRow;
 
 const StyledTableBodyRow = styled.tr`
   border: none;
+  cursor: pointer;
 `;
 
 const StyledTableBodyData = styled.td`
