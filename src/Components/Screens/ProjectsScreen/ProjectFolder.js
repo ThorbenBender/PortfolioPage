@@ -73,6 +73,7 @@ const StyledTaskBarOption = styled.div`
   height: 25%;
   width: 6%;
   align-items: center;
+  cursor: pointer;
 `;
 
 const StyledProjectOptionIcon = styled.img`

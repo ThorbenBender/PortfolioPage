@@ -20,6 +20,7 @@ const StyledDesktopShortCut = styled.div`
   justify-content: flex-start;
   text-align: center;
   width: 5%;
+  cursor: pointer;
 `;
 
 const StyledShortCutName = styled.p`

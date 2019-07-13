@@ -46,6 +46,7 @@ const StyledApplicationWindowBarIcon = styled.img`
   border-style: outset;
   margin-left: 0.25vw;
   margin-right: 0.1vw;
+  cursor: pointer;
 `;
 
 const StyledApplicationName = styled.p`
