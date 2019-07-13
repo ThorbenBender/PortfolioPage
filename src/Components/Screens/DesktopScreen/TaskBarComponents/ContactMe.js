@@ -17,7 +17,7 @@ export default ContactMe;
 const StyledContactMe = styled.a`
   margin-left: 1vw;
   padding-left: 1vw;
-  border-left-style: ridge;
-  border-left-color: lightgray;
+  /* border-left-style: ridge;
+  border-left-color: lightgray; */
   background: inherit;
 `;

@@ -26,7 +26,7 @@ export default function AboutMeScreen() {
       </StyledInformationLinks>
       <StyledContactMeContainer>
         <StyledContactMe>You can contact me by pressing the button here</StyledContactMe>
-        <StyledContactMeLink>Contact Me</StyledContactMeLink>
+        <StyledContactMeLink href="mailto:bender.thorben0@gmail.com">Contact Me</StyledContactMeLink>
       </StyledContactMeContainer>
     </StyledAboutMeScreen>
   );
@@ -51,7 +51,7 @@ const StyledInformationLink = styled.a`
 const StyledContactMeContainer = styled.div``;
 const StyledContactMe = styled.p``;
 
-const StyledContactMeLink = styled.p`
+const StyledContactMeLink = styled.a`
   text-decoration: underline;
   color: blue;
 `;

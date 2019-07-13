@@ -31,3 +31,4 @@ const StyledWindowsButton = styled.div`
 `;
 
 const StyledWindowsLogo = styled.img``;
+
