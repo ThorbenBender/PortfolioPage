@@ -5,11 +5,11 @@ import ContactMe from "./TaskBarComponents/ContactMe";
 import TimeDisplay from "./TaskBarComponents/TimeDisplay";
 import OpenApplications from "./TaskBarComponents/OpenApplications";
 
-function TaskBar() {
+function TaskBar(props) {
   return (
     <StyledTaskBar>
       <WindowsButton />
-      <ContactMe />
+      <ContactMe showModal={props.showModal} />
       <OpenApplications />
       <TimeDisplay />
     </StyledTaskBar>

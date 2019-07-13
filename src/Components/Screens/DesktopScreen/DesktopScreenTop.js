@@ -3,7 +3,6 @@ import styled from "styled-components";
 import DesktopShortcut from "../../Reusable-Components/Shortcuts/DesktopShortCut";
 import OpenFolder from "../../Icons/OpenFolder.png";
 import AboutMe from "../../Icons/AboutMe.png";
-import ContactInfo from "../../Icons/ContactInfo.png";
 
 function DesktopScreenTop(props) {
   return (
@@ -22,7 +21,6 @@ function DesktopScreenTop(props) {
         shortcutName="About Me"
         onClick={() => props.showModal("About Me")}
       />
-      <DesktopShortcut imgSource={ContactInfo} imgAlt="Contact Info" shortcutName="Contact Info" />
       <DesktopShortcut imgSource={OpenFolder} imgAlt="Perfect Fit Game" shortcutName="Perfect Fit" />
     </StyledDesktopScreenTop>
   );
