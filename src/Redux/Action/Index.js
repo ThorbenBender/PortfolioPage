@@ -6,12 +6,10 @@ export const HIDE_APPLICATION = "HIDE_APPLICATION";
 export const SHOW_APPLICATION = "SHOW_APPLICATION";
 
 export const showModal = modal => {
-  console.log("Hello");
   return { type: SHOW_MODAL, payload: modal };
 };
 
 export const closeModal = modal => {
-  console.log("delete");
   return { type: CLOSE_MODAL, payload: modal };
 };
 

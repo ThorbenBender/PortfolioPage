@@ -1,7 +1,6 @@
 import * as types from "../Action/Index";
 
 function hiddenApplication(state = [], action) {
-  console.log("Hell");
   switch (action.type) {
     case types.HIDE_APPLICATION:
       if (!state.includes(action.payload)) {
