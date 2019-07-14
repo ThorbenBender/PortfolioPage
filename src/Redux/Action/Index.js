@@ -22,7 +22,6 @@ export const closeFolder = () => {
 };
 
 export const showApplication = Application => {
-  // console.log("hello");
   return { type: SHOW_APPLICATION, payload: Application };
 };
 
