@@ -1,42 +1,42 @@
 const Answers = {
   Flocks: {
     introduction:
-      "Welcome, my name is Pinely Bot and i'am here to answer all your questions about this website. What do you want to know? \nYou can choose between these options:  \n[0] Front End \n[1] Back End \n[2] Teams  \n[3] Quit",
+      "Hello, I'm the question bot. I am here to answer all your questions about Flocks. Flocks is designing accurate marketing campaigns based on your tweets. What do you want to know? \nYou can choose between these options:  \n[0] Front End \n[1] Back End \n[2] Teams  \n[3] Quit",
     answers: [
       {
         introduction:
-          "Hello this is the Frontend Part of this section. You can choose about why we used the specific stach for this project. \nYou can choose between these options \n[0] Axios \n[1] React \n[2] React-Router-DOM \n[3] Recharts \n[4] Styled-Components \n[5] Twitter \n[6] Twitter-Widgets \n[7] Redux \n[8] Go Back",
+          "Hello this is the frontend part of this section. Choose a stack you want to know more about. \nYou can choose between these options \n[0] Axios \n[1] React \n[2] React-Router-DOM \n[3] Recharts \n[4] Styled-Components \n[5] Twitter \n[6] Twitter-Widgets \n[7] Redux \n[8] Go Back",
         answers: [
-          "Axios let's use make request to our server. It's easy to implement and also allows ansyncronous function",
-          "React is a easy to debug, thanks to the Developer it brings. As well as the Virtual Dom which improves the perfomance of your application.",
-          "React Router let's you load different Components on paths. Allows a single page application",
-          "Is a library for easy creation of charts in your application.",
-          "Styled components let's you use css on components without assigning any classes or ids. It allows you also to use props which makes your styling more dynamic and reusable",
+          "Axios let's use make a request to our server. It's easy to implement and also allows asynchronous function.",
+          "React is easy to debug, thanks to the Developer Debug tools it brings to the browser. As well as the Virtual Dom which improves the performance of your application.",
+          "React Router lets you load different Components on paths. Allows a single page application.",
+          "React Charts is a library for easy creation of charts in your application.",
+          "Styled components let you use CSS on components without assigning any classes or ids. It allows you also to use props which makes your styling more dynamic and reusable.",
           "Let's us connect to the twitter API and fetching data from it.",
           "Alleviates the need for Twitter's default 2008-style widget snippets."
         ]
       },
       {
         introduction:
-          "Hello this is the Frontend Part of this section. You can choose about why we used the specific stach for this project. \nYou can choose between these options \n[0] Axios \n[1] BcryptJs \n[2] Cors \n[3] Dotenv \n[4] Express \n[5] Helmet \n[6] Json Web-Token \n[7] Knex \n[8] Passport \n[9] Passport-Google-OAuth20 \n[10] Sqlite \n[11] Twitter \n[12] Go Back",
+          "Hello this is the backend part of this section. Choose a stack you want to know more about. \nYou can choose between these options \n[0] Axios \n[1] BcryptJs \n[2] Cors \n[3] Dotenv \n[4] Express \n[5] Helmet \n[6] Json Web-Token \n[7] Knex \n[8] Passport \n[9] Passport-Google-OAuth20 \n[10] Sqlite \n[11] Twitter \n[12] Go Back",
         answers: [
-          "Axios let's use make request to our server. It's easy to implement and also allows ansyncronous function",
-          "Bcrypt is password hashing function which protects your data against Rainbow table attacks as well as brute-force search attacks.",
-          "Cors allows to make cross platform requests, so we can connect it with our react website.",
-          "Dotenv allows us to create enviromental variables. Securitey meauserement to protect important data like an api key to get uploaded to Github.",
-          "Express makes it easier to setup a node.js server.",
-          "Helmet",
-          "Let's us create web token containing user information. Protects data from hacker through decryption and hashing.",
+          "Axios let's use make a request to our server. It's easy to implement and also allows asynchronous function.",
+          "Bcrypt is a password hashing function which protects your data against Rainbow table attacks as well as brute-force search attacks.",
+          "Cors allows to make cross-platform requests, so we can connect it with our react website.",
+          "Dotenv allows us to create environmental variables. Security measurement to protect important data like an API key to get uploaded to Github.",
+          "Express makes it easier to set up a node.js server.",
+          "Helmet helps you secure your Express apps by setting various HTTP headers.",
+          "Allows us to create a web token containing user information. Protects data from hacker through decryption and hashing.",
           "Allows us to create a databases. Easy to setup and update.",
           "Passport allows us to register with different accounts.",
           "Passport-Google-OAuth20 allows us to register with google accounts.",
-          "Sqlite allows us to sqlite as a database and allows us as well to create a database by using knex.",
+          "SQLite allows us to SQLite as a database and allows us as well to create a database by using knex.",
           "Let's us connect to the twitter API and fetching data from it."
         ]
       },
       {
         introduction:
-          "Hello this is the Frontend Part of this section. You can choose about why we used the specific stach for this project. \nYou can choose between these options \n[0] Britton Winterrose \n[1] Chrisopher Seiler \n[2] Christopher Riffle \n[3] Dustin Bailey \n[4] Vijay Das \n[5] Will Jarvis \n[6] Go Back",
+          "Hello, here you can see all the members of the team and learn more about them. \nYou can choose between these options \n[0] Britton Winterrose \n[1] Chrisopher Seiler \n[2] Christopher Riffle \n[3] Dustin Bailey \n[4] Vijay Das \n[5] Will Jarvis \n[6] Go Back",
         answers: [
           "Britton Winterrose was working on the Data Science part of this project.",
           "Christopher Seiler was working on the Data Science part of this project.",
@@ -73,7 +73,7 @@ const Answers = {
           "Dotenv allows us to create environmental variables. Security measurement to protect important data like an API key to get uploaded to Github.",
           "Express makes it easier to set up a node.js server.",
           "Allows us to create a web token containing user information. Protects data from hacker through decryption and hashing.",
-          "Allows us to create SQLite databases. Easy to set up and update.",
+          "Allows us to create a databases. Easy to setup and update.",
           "Allows us to save data in Pdf formats.",
           "PG has support for PostgreSQL features.",
           "SQLite allows us to SQLite as a database and allows us as well to create a database by using knex."
