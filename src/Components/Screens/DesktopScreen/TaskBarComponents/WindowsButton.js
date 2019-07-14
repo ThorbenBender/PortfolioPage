@@ -20,7 +20,7 @@ const StyledWindowsButton = styled.div`
   height: 70%;
   margin-left: 0.5%;
   border: none;
-  cursor: pointer
+  cursor: pointer;
   /* border-style: outset;
   border-color: white black black white;
   border-width: 2px; */

@@ -123,7 +123,7 @@ const Answers = {
       },
       {
         introduction:
-          "Hello this is the Frontend Part of this section. You can choose about why we used the specific stach for this project. \nYou can choose between these options \n[0] Elisa Martin \n[1] Ivana Huckova  \n[2] Novina Pun \n[3] Samar Vir \n[4] Sean Attawell \n[5] Go Back",
+          "Hello, here you can see all the members of the team and learn more about them. \nYou can choose between these options \n[0] Elisa Martin \n[1] Ivana Huckova  \n[2] Novina Pun \n[3] Samar Vir \n[4] Sean Attawell \n[5] Go Back",
         answers: [
           "Elis Martin was the Captain of this project. She helped us with through all the hindrances that came with this project.",
           "Ivana was the genius behind the design of the website. She also took a part in the functionality of the application.",
