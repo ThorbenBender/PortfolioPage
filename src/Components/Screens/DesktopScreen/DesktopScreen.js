@@ -11,11 +11,13 @@ import SmallQuestion from "../../Icons/SmallQuestion.png";
 
 class DesktopScreen extends React.Component {
   render() {
+    console.log(this.props.modals.indexOf("Projects"));
     return (
       <StyledDesktopScreen onDragOver={e => this.onDragOver(e)} onDrop={e => this.onDrop(e, "complete")}>
         {this.props.modals.includes("Projects") && (
           <ApplicationWindow
             closeModal={this.props.closeModal}
+            index={this.props.modals.indexOf("Projects")}
             applicationName="Projects"
             icon={smallOpenFolder}
             iconAlt="OpenFolder"

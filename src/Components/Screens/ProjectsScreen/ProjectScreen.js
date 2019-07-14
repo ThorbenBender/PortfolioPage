@@ -55,8 +55,8 @@ function ProjectScreen(props) {
           </tr>
         </StyledTableHead>
         <StyledTableBody>
-          {Projects.map(project => (
-            <TableBodyRow project={project} openFolder={() => props.openFolder(project.name)} />
+          {Projects.map((project, idx) => (
+            <TableBodyRow project={project} openFolder={() => props.openFolder(project.name)} key={idx} />
           ))}
         </StyledTableBody>
       </ProjectsTable>

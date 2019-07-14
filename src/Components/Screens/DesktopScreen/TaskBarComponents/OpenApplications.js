@@ -7,8 +7,10 @@ import styled from "styled-components";
 function OpenApplications(props) {
   return (
     <StyledOpenApplications>
-      {props.modals.map(modal => (
-        <StyledOpenApplication onClick={() => props.showApplication(modal)}>{modal}</StyledOpenApplication>
+      {props.modals.map((modal, idx) => (
+        <StyledOpenApplication onClick={() => props.showApplication(modal)} key={idx}>
+          {modal}
+        </StyledOpenApplication>
       ))}
     </StyledOpenApplications>
   );
