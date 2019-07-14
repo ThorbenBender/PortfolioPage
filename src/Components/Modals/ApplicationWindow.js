@@ -5,7 +5,9 @@ import styled from "styled-components";
 
 class ApplicationWindow extends React.Component {
   render() {
-    const style = this.props.hiddenApplication.includes(this.props.applicationName) ? { display: "none" } : {};
+    const style = this.props.hiddenApplication.includes(this.props.applicationName)
+      ? { display: "none" }
+      : { marginTop: `${this.props.index * 1.75}vw`, zIndex: this.props.index };
     return (
       <StyledApplicationWindow key={this.props.applicationName} style={style}>
         <ApplicationWindowBar
@@ -13,7 +15,7 @@ class ApplicationWindow extends React.Component {
           applicationName={this.props.applicationName}
           icon={this.props.icon}
           iconAlt={this.props.iconAlt}
-          hideApplication={this.props.hideApplication}
+          toggleApplication={this.props.toggleApplication}
         />
         <ApplicationWindowScreen screen={this.props.applicationName} closeModal={this.props.closeModal} />
       </StyledApplicationWindow>
