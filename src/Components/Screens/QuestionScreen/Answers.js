@@ -93,7 +93,7 @@ const Answers = {
   },
   Pinely: {
     introduction:
-      "Hello, I'm the question bot. I am here to answer all your questions about Pinely. Piney was inspired by Matt Mullenweg p2 WordPress theme which they used internally at his company instead of using emails. It uses short messages with twitter like feel. We build pinely because in big companies, through all the emails and slack messages you easily lose track of the current topic in the organization. Pinely solves this by creating a front-page for employees to catch up on the most recent discussions in the company. What do you want to know? \nYou can choose between these options:  \n[0] Front End \n[1] Back End \n[2] Teams  \n[3] Quit",
+      "Hello, I'm the question bot. I am here to answer all your questions about Pinely. Pinely was inspired by Matt Mullenweg p2 WordPress theme which they used internally at his company instead of using emails. It uses short messages with twitter like feel. We build pinely because in big companies, through all the emails and slack messages you easily lose track of the current topic in the organization. Pinely solves this by creating a front-page for employees to catch up on the most recent discussions in the company. What do you want to know? \nYou can choose between these options:  \n[0] Front End \n[1] Back End \n[2] Teams  \n[3] Quit",
     answers: [
       {
         introduction:
