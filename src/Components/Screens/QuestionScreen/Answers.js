@@ -97,7 +97,7 @@ const Answers = {
     answers: [
       {
         introduction:
-          "Hello this is the Frontend Part of pinely.Because we used react-redux-firebase with this project, we had most of the backend functionality on the front-end. We decided to use firebase because we wanted to have a real-time database. We styled the website using Semantic-UI and styled components. We used threads.com as an inspiration for the design. You can choose about why we used the specific stach for this project. \nYou can choose between these options \n[0] React \n[1] Styled-Components \n[2] React-Redux-Firebase \n[3] Redux \n[4] Stripe-Components \n[5] React-Router-DOM \n[6] Semantic-Ui \n[7] React-Giphy-Component \n[8] Go Back",
+          "Hello this is the Frontend Part of pinely. Because we used react-redux-firebase with this project, we had most of the backend functionality on the front-end. We decided to use firebase because we wanted to have a real-time database. We styled the website using Semantic-UI and styled components. We used threads.com as an inspiration for the design. Choose a stack you want to know more about. \nYou can choose between these options \n[0] React \n[1] Styled-Components \n[2] React-Redux-Firebase \n[3] Redux \n[4] Stripe-Components \n[5] React-Router-DOM \n[6] Semantic-Ui \n[7] React-Giphy-Component \n[8] Go Back",
         answers: [
           "React is easy to debug, thanks to the Developer Debug tools it brings to the browser. As well as the Virtual Dom which improves the performance of your application.",
           "Styled components let you use CSS on components without assigning any classes or ids. It allows you also to use props which makes your styling more dynamic and reusable.",
