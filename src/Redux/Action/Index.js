@@ -5,6 +5,7 @@ export const CLOSE_FOLDER = "CLOSE_FOLDER";
 export const HIDE_APPLICATION = "HIDE_APPLICATION";
 export const SHOW_APPLICATION = "SHOW_APPLICATION";
 export const TOGGLE_APPLICATION = "TOGGLE_APPLICATION";
+export const ON_FOCUS_APPLICATION = "ON_FOCUS_APPLICATION";
 
 export const showModal = modal => {
   return { type: SHOW_MODAL, payload: modal };
@@ -24,4 +25,8 @@ export const closeFolder = () => {
 
 export const toggleApplication = Application => {
   return { type: TOGGLE_APPLICATION, payload: Application };
+};
+
+export const onFocus = Application => {
+  return { type: ON_FOCUS_APPLICATION, payload: Application };
 };

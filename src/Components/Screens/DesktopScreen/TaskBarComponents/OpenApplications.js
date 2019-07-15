@@ -1,7 +1,7 @@
 import React from "react";
 import { compose, bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { toggleApplication } from "../../../../Redux/Action/Index";
+import { toggleApplication, onFocus } from "../../../../Redux/Action/Index";
 import styled from "styled-components";
 
 function OpenApplications(props) {
@@ -23,7 +23,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ toggleApplication }, dispatch);
+  return bindActionCreators({ toggleApplication, onFocus }, dispatch);
 };
 
 export default compose(
