@@ -38,7 +38,6 @@ export default ProjectFolder;
 
 const StyledTaskBar = styled.div`
   height: 12%;
-  margin-left: 2vw;
   display: flex;
   align-items: center;
 `;

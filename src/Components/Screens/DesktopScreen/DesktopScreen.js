@@ -98,7 +98,8 @@ export default compose(
 )(DesktopScreen);
 
 const StyledDesktopScreen = styled.div`
-  height: 100vh;
+  height: 100vmax;
+  width: 100%;
   padding: 0;
   margin: 0;
 `;
