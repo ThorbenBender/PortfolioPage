@@ -12,6 +12,15 @@ export default function modals(state = [], action) {
         return e !== action.payload;
       });
       return state;
+    case types.ON_FOCUS_APPLICATION:
+      if (state[state.length - 1] === action.payload) {
+        return state;
+      } else {
+        let savedItem = state[state.indexOf(action.payload)];
+        state[state.indexOf(savedItem)] = state[state.length - 1];
+        state[state.length - 1] = savedItem;
+        return state;
+      }
     default:
       return state;
   }

@@ -46,7 +46,6 @@ class QuestionScreen extends React.Component {
         }));
       }
     } else {
-      console.log(Answers[this.props.QuestionScreen].answers.length - 1);
       if (input <= Answers[this.props.QuestionScreen].answers.length - 1 && input >= 0) {
         this.setState(st => ({
           computerAnswer: [...st.computerAnswer, Answers[this.props.QuestionScreen].answers[input].introduction],

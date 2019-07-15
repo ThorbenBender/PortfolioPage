@@ -11,7 +11,7 @@ function ApplicationWindowBar(props) {
       <StyledApplicationWindowBarIcon
         src={minimizeIcon}
         alt="minimize window icon"
-        onClick={() => props.hideApplication(props.applicationName)}
+        onClick={() => props.toggleApplication(props.applicationName)}
       />
       <StyledApplicationWindowBarIcon
         src={closeIcon}

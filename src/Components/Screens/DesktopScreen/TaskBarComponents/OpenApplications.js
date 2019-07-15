@@ -1,14 +1,16 @@
 import React from "react";
 import { compose, bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { showApplication } from "../../../../Redux/Action/Index";
+import { toggleApplication, onFocus } from "../../../../Redux/Action/Index";
 import styled from "styled-components";
 
 function OpenApplications(props) {
   return (
     <StyledOpenApplications>
-      {props.modals.map(modal => (
-        <StyledOpenApplication onClick={() => props.showApplication(modal)}>{modal}</StyledOpenApplication>
+      {props.modals.map((modal, idx) => (
+        <StyledOpenApplication onClick={() => props.toggleApplication(modal)} key={idx}>
+          {modal}
+        </StyledOpenApplication>
       ))}
     </StyledOpenApplications>
   );
@@ -21,7 +23,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ showApplication }, dispatch);
+  return bindActionCreators({ toggleApplication, onFocus }, dispatch);
 };
 
 export default compose(
