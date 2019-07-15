@@ -40,18 +40,53 @@ const StyledIntroduction = styled.div``;
 
 const StyledInformationLinks = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
 `;
 
 const StyledInformationLink = styled.a`
-  margin-bottom: 1vh;
-  color: blue;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5% 0 0.5%;
+  height: 70%;
+  margin-left: 0.5%;
+  border: none;
+  cursor: pointer;
+  padding: 0.5% 4.5% 0.5% 4.5%;
+  text-decoration: none;
+  color: black;
+  /* border-style: outset;
+  border-color: white black black white;
+  border-width: 2px; */
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+  box-shadow: inset 1px 1px #dfdfdf, 1px 0 #000, 0 1px #000, 1px 1px #000;
 `;
 
 const StyledContactMeContainer = styled.div``;
 const StyledContactMe = styled.p``;
 
 const StyledContactMeLink = styled.a`
-  text-decoration: underline;
-  color: blue;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5% 0 0.5%;
+  height: 70%;
+  margin-left: 0.5%;
+  border: none;
+  cursor: pointer;
+  padding: 0.5% 4.5% 0.5% 4.5%;
+  text-decoration: none;
+  color: black;
+  /* border-style: outset;
+  border-color: white black black white;
+  border-width: 2px; */
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+  box-shadow: inset 1px 1px #dfdfdf, 1px 0 #000, 0 1px #000, 1px 1px #000;
+  width: 10%;
 `;
