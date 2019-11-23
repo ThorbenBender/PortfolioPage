@@ -29,13 +29,10 @@ function DesktopScreenTop(props) {
 export default DesktopScreenTop;
 
 const StyledDesktopScreenTop = styled.div`
-  height: 38.5%;
+  height: 88%;
   background: #008080;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding-top: 10%;
-  @media only screen and (max-width: 1870px) {
-    max-height: 75%;
-  }
 `;
