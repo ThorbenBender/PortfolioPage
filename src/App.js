@@ -4,8 +4,8 @@ import styled from "styled-components";
 import ReactGA from 'react-ga';
 
 function initializeAnalytics() {
-  ReactGA.initialize('UA-153103752-1')
-  ReactGA.pageview('/HomePage');
+  ReactGA.initialize('UA-153103752-2')
+  ReactGA.pageview('HomePage');
 }
 
 function App() {
