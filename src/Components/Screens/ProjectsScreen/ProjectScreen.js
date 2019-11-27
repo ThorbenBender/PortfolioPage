@@ -82,7 +82,6 @@ export default compose(
 )(ProjectScreen);
 
 const ProjectsTable = styled.table`
-  /* height: 90%;*/
   width: 100%;
 `;
 
@@ -93,6 +92,8 @@ const StyledProjectScreen = styled.div`
 
 const StyledTableHead = styled.thead`
   background: #bfc7c9;
+  width: 100%;
+  height: 10%;
 `;
 
 const StyledTableBody = styled.tbody`

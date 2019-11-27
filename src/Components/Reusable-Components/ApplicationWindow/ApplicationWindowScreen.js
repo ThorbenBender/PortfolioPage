@@ -43,5 +43,4 @@ export default compose(
 
 const StyledApplicationWindowScreen = styled.div`
   height: 94%;
-  width: 50vw
 `;

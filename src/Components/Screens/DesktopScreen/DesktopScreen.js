@@ -11,7 +11,6 @@ import SmallQuestion from "../../Icons/SmallQuestion.png";
 
 class DesktopScreen extends React.Component {
   render() {
-    console.log(this.props.modals.indexOf("Projects"));
     return (
       <StyledDesktopScreen>
         {this.props.modals.includes("Projects") && (
