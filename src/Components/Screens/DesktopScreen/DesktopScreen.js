@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import { compose, bindActionCreators } from "redux";
 import { closeModal, showModal, toggleApplication, onFocus } from "../../../Redux/Action/Index";
-import ApplicationWindow from "../../Modals/ApplicationWindow";
+import ApplicationWindow from "../../Reusable-Components/ApplicationWindow/ApplicationWindow";
 import smallOpenFolder from "../../Icons/smallOpenFolder.png";
 import SmallQuestion from "../../Icons/SmallQuestion.png";
 

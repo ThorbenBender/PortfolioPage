@@ -1,6 +1,6 @@
 import React from "react";
-import ApplicationWindowBar from "../Reusable-Components/ApplicationWindow/ApplicationWindowBar";
-import ApplicationWindowScreen from "../Reusable-Components/ApplicationWindow/ApplicationWindowScreen";
+import ApplicationWindowBar from "./ApplicationWindowBar";
+import ApplicationWindowScreen from "./ApplicationWindowScreen";
 import styled from "styled-components";
 
 class ApplicationWindow extends React.Component {
