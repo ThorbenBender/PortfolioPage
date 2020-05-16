@@ -2,23 +2,12 @@ import React from 'react';
 import DesktopScreenTop from './DesktopScreenTop';
 import TaskBar from './TaskBar';
 import styled from 'styled-components';
-import { connect } from 'react-redux';
-import { compose, bindActionCreators } from 'redux';
-import {
-  closeModal,
-  showModal,
-  toggleApplication,
-  onFocus
-} from '../../../Redux/Action/Index';
-import ApplicationWindow from '../../Reusable-Components/ApplicationWindow/ApplicationWindow';
-import smallOpenFolder from '../../Icons/smallOpenFolder.png';
-import SmallQuestion from '../../Icons/SmallQuestion.png';
 
 class DesktopScreen extends React.Component {
   render() {
     return (
       <StyledDesktopScreen>
-        {this.props.modals.includes('Pinely') && (
+        {/* {this.props.modals.includes('Pinely') && (
           <ApplicationWindow
             closeModal={this.props.closeModal}
             onFocus={this.props.onFocus}
@@ -117,7 +106,7 @@ class DesktopScreen extends React.Component {
             toggleApplication={this.props.toggleApplication}
             hiddenApplication={this.props.hiddenApplication}
           />
-        )}
+        )} */}
         <DesktopScreenTop showModal={this.props.showModal} />
         <TaskBar toggleApplication={this.props.toggleApplication} />
       </StyledDesktopScreen>
@@ -125,20 +114,7 @@ class DesktopScreen extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return { modals: state.modals, hiddenApplication: state.hiddenApplication };
-};
-
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators(
-    { closeModal, showModal, toggleApplication, onFocus },
-    dispatch
-  );
-};
-
-export default compose(connect(mapStateToProps, mapDispatchToProps))(
-  DesktopScreen
-);
+export default DesktopScreen;
 
 const StyledDesktopScreen = styled.div`
   height: 100vh;

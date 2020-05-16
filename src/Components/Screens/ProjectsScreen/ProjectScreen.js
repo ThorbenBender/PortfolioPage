@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import TableBodyRow from './StyledTableBodyRow';
-import { connect } from 'react-redux';
-import { compose, bindActionCreators } from 'redux';
-import { showModal } from '../../../Redux/Action/Index';
 import ProjectFolder from './ProjectFolder';
 
 const Projects = [
@@ -69,19 +66,7 @@ function ProjectScreen(props) {
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    isFolderOpen: state.isFolderOpen
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ showModal }, dispatch);
-};
-
-export default compose(connect(mapStateToProps, mapDispatchToProps))(
-  ProjectScreen
-);
+export default ProjectScreen;
 
 const ProjectsTable = styled.table`
   width: 100%;

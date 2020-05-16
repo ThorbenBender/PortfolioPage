@@ -3,8 +3,6 @@ import ProjectsScreen from '../../Screens/ProjectsScreen/ProjectScreen';
 import styled from 'styled-components';
 import QuestionScreen from '../../Screens/QuestionScreen/QuestionScreen';
 import AboutMeScreen from '../../Screens/AboutMe/AboutMeScreen';
-import { connect } from 'react-redux';
-import { compose, bindActionCreators } from 'redux';
 
 function ApplicationWindowScreen(props) {
   return (
@@ -38,19 +36,7 @@ function ApplicationWindowScreen(props) {
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    modal: state.modal
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators({}, dispatch);
-};
-
-export default compose(connect(mapStateToProps, mapDispatchToProps))(
-  ApplicationWindowScreen
-);
+export default ApplicationWindowScreen;
 
 const StyledApplicationWindowScreen = styled.div`
   height: 94%;
