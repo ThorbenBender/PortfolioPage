@@ -1,6 +1,6 @@
 import React from "react";
-import ApplicationWindowBar from "../Reusable-Components/ApplicationWindow/ApplicationWindowBar";
-import ApplicationWindowScreen from "../Reusable-Components/ApplicationWindow/ApplicationWindowScreen";
+import ApplicationWindowBar from "./ApplicationWindowBar";
+import ApplicationWindowScreen from "./ApplicationWindowScreen";
 import styled from "styled-components";
 
 class ApplicationWindow extends React.Component {
@@ -27,12 +27,11 @@ export default ApplicationWindow;
 
 const StyledApplicationWindow = styled.div`
   margin: 0 auto;
-  position: fixed;
+  position: absolute;
   top: 20vh;
   left: 30vw;
-  z-index: 2;
-  height: 50vh;
-  width: 40vw;
+  height: 40%;
+  width: 35%;
   background: #bfc7c9;
   display: flex;
   flex-direction: column;

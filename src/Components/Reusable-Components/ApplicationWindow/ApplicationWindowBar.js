@@ -26,18 +26,19 @@ export default ApplicationWindowBar;
 
 const StyledApplicationWindowBar = styled.div`
   background: #0d0c8e; /* Old browsers */
-  background: -moz-linear-gradient(top, #0d0c8e 0%, #0100aa 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #0d0c8e 0%, #0100aa 100%); /* Chrome10-25,Safari5.1-6 */
+  background: -moz-linear-gradient(top, #0d0c8e 0%, #0100aa 100%);
+  background: -webkit-linear-gradient(top, #0d0c8e 0%, #0100aa 100%); 
   background: linear-gradient(
     to bottom,
     #0d0c8e 0%,
     #0100aa 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  );
   height: 2.5vh;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin: 0.1vw;
+  width: 100%;
 `;
 
 const StyledApplicationWindowBarIcon = styled.img`

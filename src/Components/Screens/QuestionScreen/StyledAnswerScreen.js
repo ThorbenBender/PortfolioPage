@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Typing from "react-typing-animation";
 import RightArrow from "../../Icons/right-arrow.png";
 
 class AnswerScreen extends React.Component {
@@ -12,9 +11,7 @@ class AnswerScreen extends React.Component {
           {this.props.QuestionScreen}
           <StyledRightArrow src={RightArrow} alt="Right Arrow" />
         </StyledFolderName>
-        <Typing speed={1} onStartedTyping={this.props.startTyping} onFinishedTyping={this.props.doneTyping}>
           <StyledSpan>{this.props.answer}</StyledSpan>
-        </Typing>
       </StyledAnswerScreen>
     );
   }
