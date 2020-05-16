@@ -1,23 +1,41 @@
-import React from "react";
-import DesktopScreenTop from "./DesktopScreenTop";
-import TaskBar from "./TaskBar";
-import styled from "styled-components";
-import { connect } from "react-redux";
-import { compose, bindActionCreators } from "redux";
-import { closeModal, showModal, toggleApplication, onFocus } from "../../../Redux/Action/Index";
-import ApplicationWindow from "../../Reusable-Components/ApplicationWindow/ApplicationWindow";
-import smallOpenFolder from "../../Icons/smallOpenFolder.png";
-import SmallQuestion from "../../Icons/SmallQuestion.png";
+import React from 'react';
+import DesktopScreenTop from './DesktopScreenTop';
+import TaskBar from './TaskBar';
+import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { compose, bindActionCreators } from 'redux';
+import {
+  closeModal,
+  showModal,
+  toggleApplication,
+  onFocus
+} from '../../../Redux/Action/Index';
+import ApplicationWindow from '../../Reusable-Components/ApplicationWindow/ApplicationWindow';
+import smallOpenFolder from '../../Icons/smallOpenFolder.png';
+import SmallQuestion from '../../Icons/SmallQuestion.png';
 
 class DesktopScreen extends React.Component {
   render() {
     return (
       <StyledDesktopScreen>
-        {this.props.modals.includes("Projects") && (
+        {this.props.modals.includes('Pinely') && (
           <ApplicationWindow
             closeModal={this.props.closeModal}
             onFocus={this.props.onFocus}
-            index={this.props.modals.indexOf("Projects")}
+            index={this.props.modals.indexOf('Pinely')}
+            applicationName="Pinely"
+            icon={smallOpenFolder}
+            iconAlt="OpenFolder"
+            showModal={this.props.showModal}
+            toggleApplication={this.props.toggleApplication}
+            hiddenApplication={this.props.hiddenApplication}
+          />
+        )}
+        {this.props.modals.includes('Guidr') && (
+          <ApplicationWindow
+            closeModal={this.props.closeModal}
+            onFocus={this.props.onFocus}
+            index={this.props.modals.indexOf('Projects')}
             applicationName="Projects"
             icon={smallOpenFolder}
             iconAlt="OpenFolder"
@@ -26,11 +44,37 @@ class DesktopScreen extends React.Component {
             hiddenApplication={this.props.hiddenApplication}
           />
         )}
-        {this.props.modals.includes("Questions Pinely") && (
+        {this.props.modals.includes('Flocks') && (
           <ApplicationWindow
             closeModal={this.props.closeModal}
             onFocus={this.props.onFocus}
-            index={this.props.modals.indexOf("Questions Pinely")}
+            index={this.props.modals.indexOf('Projects')}
+            applicationName="Projects"
+            icon={smallOpenFolder}
+            iconAlt="OpenFolder"
+            showModal={this.props.showModal}
+            toggleApplication={this.props.toggleApplication}
+            hiddenApplication={this.props.hiddenApplication}
+          />
+        )}
+        {this.props.modals.includes('Projects') && (
+          <ApplicationWindow
+            closeModal={this.props.closeModal}
+            onFocus={this.props.onFocus}
+            index={this.props.modals.indexOf('Projects')}
+            applicationName="Projects"
+            icon={smallOpenFolder}
+            iconAlt="OpenFolder"
+            showModal={this.props.showModal}
+            toggleApplication={this.props.toggleApplication}
+            hiddenApplication={this.props.hiddenApplication}
+          />
+        )}
+        {this.props.modals.includes('Questions Pinely') && (
+          <ApplicationWindow
+            closeModal={this.props.closeModal}
+            onFocus={this.props.onFocus}
+            index={this.props.modals.indexOf('Questions Pinely')}
             applicationName="Questions Pinely"
             icon={SmallQuestion}
             iconAlt="Small Question Icon"
@@ -38,11 +82,11 @@ class DesktopScreen extends React.Component {
             hiddenApplication={this.props.hiddenApplication}
           />
         )}
-        {this.props.modals.includes("Questions Guidr") && (
+        {this.props.modals.includes('Questions Guidr') && (
           <ApplicationWindow
             closeModal={this.props.closeModal}
             onFocus={this.props.onFocus}
-            index={this.props.modals.indexOf("Questions Guidr")}
+            index={this.props.modals.indexOf('Questions Guidr')}
             applicationName="Questions Guidr"
             icon={SmallQuestion}
             iconAlt="Small Question Icon"
@@ -50,11 +94,11 @@ class DesktopScreen extends React.Component {
             hiddenApplication={this.props.hiddenApplication}
           />
         )}
-        {this.props.modals.includes("Questions Flocks") && (
+        {this.props.modals.includes('Questions Flocks') && (
           <ApplicationWindow
             closeModal={this.props.closeModal}
             onFocus={this.props.onFocus}
-            index={this.props.modals.indexOf("Questions Flocks")}
+            index={this.props.modals.indexOf('Questions Flocks')}
             applicationName="Questions Flocks"
             icon={SmallQuestion}
             iconAlt="Small Question Icon"
@@ -62,11 +106,11 @@ class DesktopScreen extends React.Component {
             hiddenApplication={this.props.hiddenApplication}
           />
         )}
-        {this.props.modals.includes("About Me") && (
+        {this.props.modals.includes('About Me') && (
           <ApplicationWindow
             closeModal={this.props.closeModal}
             onFocus={this.props.onFocus}
-            index={this.props.modals.indexOf("About Me")}
+            index={this.props.modals.indexOf('About Me')}
             applicationName="About Me"
             icon={SmallQuestion}
             iconAlt="Small Question Icon"
@@ -86,15 +130,15 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ closeModal, showModal, toggleApplication, onFocus }, dispatch);
+  return bindActionCreators(
+    { closeModal, showModal, toggleApplication, onFocus },
+    dispatch
+  );
 };
 
-export default compose(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )
-)(DesktopScreen);
+export default compose(connect(mapStateToProps, mapDispatchToProps))(
+  DesktopScreen
+);
 
 const StyledDesktopScreen = styled.div`
   height: 100vh;
