@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Typing from "react-typing-animation";
 import RightArrow from "../../Icons/right-arrow.png";
 
 class AnswerScreen extends React.Component {
