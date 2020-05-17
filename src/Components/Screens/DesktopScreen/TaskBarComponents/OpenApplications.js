@@ -1,14 +1,16 @@
-import React from "react";
-import { compose, bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import { toggleApplication, onFocus } from "../../../../Redux/Action/Index";
-import styled from "styled-components";
+import React, { useContext } from 'react';
+import styled from 'styled-components';
+import Context from '../../../ContextProvider/Context';
 
 function OpenApplications(props) {
+  const { modals, toggleApplication } = useContext(Context);
   return (
     <StyledOpenApplications>
-      {props.modals.map((modal, idx) => (
-        <StyledOpenApplication onClick={() => props.toggleApplication(modal)} key={idx}>
+      {modals.map((modal, idx) => (
+        <StyledOpenApplication
+          onClick={() => toggleApplication(modal)}
+          key={idx}
+        >
           {modal}
         </StyledOpenApplication>
       ))}
@@ -16,22 +18,7 @@ function OpenApplications(props) {
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    modals: state.modals
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ toggleApplication, onFocus }, dispatch);
-};
-
-export default compose(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )
-)(OpenApplications);
+export default OpenApplications;
 
 const StyledOpenApplications = styled.div`
   margin-left: 4vw;
