@@ -1,9 +1,11 @@
-import React from "react";
-import closeIcon from "../../Icons/close-button.png";
-import minimizeIcon from "../../Icons/minimize_window.png";
-import styled from "styled-components";
+import React, { useContext } from 'react';
+import closeIcon from '../../Icons/close-button.png';
+import minimizeIcon from '../../Icons/minimize_window.png';
+import styled from 'styled-components';
+import Context from '../../ContextProvider/Context';
 
 function ApplicationWindowBar(props) {
+  const { closeModal, toggleApplication } = useContext(Context);
   return (
     <StyledApplicationWindowBar>
       <StyledApplicationNameIcon src={props.icon} alt={props.iconAlt} />
@@ -11,12 +13,12 @@ function ApplicationWindowBar(props) {
       <StyledApplicationWindowBarIcon
         src={minimizeIcon}
         alt="minimize window icon"
-        onClick={() => props.toggleApplication(props.applicationName)}
+        onClick={() => toggleApplication(props.applicationName)}
       />
       <StyledApplicationWindowBarIcon
         src={closeIcon}
         alt="close window icon"
-        onClick={() => props.closeModal(props.applicationName)}
+        onClick={() => closeModal(props.applicationName)}
       />
     </StyledApplicationWindowBar>
   );
@@ -27,12 +29,8 @@ export default ApplicationWindowBar;
 const StyledApplicationWindowBar = styled.div`
   background: #0d0c8e; /* Old browsers */
   background: -moz-linear-gradient(top, #0d0c8e 0%, #0100aa 100%);
-  background: -webkit-linear-gradient(top, #0d0c8e 0%, #0100aa 100%); 
-  background: linear-gradient(
-    to bottom,
-    #0d0c8e 0%,
-    #0100aa 100%
-  );
+  background: -webkit-linear-gradient(top, #0d0c8e 0%, #0100aa 100%);
+  background: linear-gradient(to bottom, #0d0c8e 0%, #0100aa 100%);
   height: 2.5vh;
   display: flex;
   justify-content: flex-end;

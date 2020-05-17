@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ApplicationWindowBar from '../Reusable-Components/ApplicationWindow/ApplicationWindowBar';
 import ProjectFolder from './ProjectsScreen/ProjectFolder';
 import styled from 'styled-components';
+import Context from '../ContextProvider/Context';
 
 const Pinely = props => {
-  //   const style = props.hiddenApplication.includes(
-  //     props.applicationName
-  //   )
-  //     ? { display: 'none' }
-  //     : { marginTop: `${props.index * 1.75}vw`, zIndex: props.index };
+  const { hiddenApplication } = useContext(Context);
+  console.log(hiddenApplication);
+  const style = hiddenApplication.includes('Pinely')
+    ? { display: 'none' }
+    : { marginTop: `${props.index * 1.75}vw`, zIndex: props.index };
   return (
-    <StyledApplicationWindow key={props.applicationName}>
+    <StyledApplicationWindow key={props.applicationName} style={style}>
       <ApplicationWindowBar
-        closeModal={props.closeModal}
         applicationName="Pinely"
         icon={props.icon}
         iconAlt={props.iconAlt}
