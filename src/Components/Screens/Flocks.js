@@ -6,7 +6,6 @@ import Context from '../ContextProvider/Context';
 
 const Flocks = props => {
   const { hiddenApplication, highlightApplication } = useContext(Context);
-  console.log(hiddenApplication);
   const style = hiddenApplication.includes('Flocks')
     ? { display: 'none' }
     : { marginTop: `${props.index * 1.75}vw`, zIndex: props.index };

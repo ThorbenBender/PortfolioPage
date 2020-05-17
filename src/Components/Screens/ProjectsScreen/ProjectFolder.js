@@ -19,7 +19,7 @@ function ProjectFolder(props) {
           <StyledProjectOptionName>Github</StyledProjectOptionName>
         </StyledProjectOptionAnchor>
         <StyledTaskBarOption
-          onClick={() => props.showModal(`Questions ${props.folder}`)}
+          onClick={() => props.addModal(`Questions ${props.folder}`)}
         >
           <StyledProjectOptionIcon src={QuestionIcon} alt="Question Icon" />
           <StyledProjectOptionName>Questions</StyledProjectOptionName>

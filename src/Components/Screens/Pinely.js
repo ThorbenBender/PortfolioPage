@@ -5,7 +5,9 @@ import styled from 'styled-components';
 import Context from '../ContextProvider/Context';
 
 const Pinely = props => {
-  const { hiddenApplication, highlightApplication } = useContext(Context);
+  const { hiddenApplication, highlightApplication, addModal } = useContext(
+    Context
+  );
   const style = hiddenApplication.includes('Pinely')
     ? { display: 'none' }
     : { marginTop: `${props.index * 1.75}vw`, zIndex: props.index };
@@ -29,9 +31,8 @@ const Pinely = props => {
         <ProjectFolder
           githubLink="https://github.com/labseu1-db"
           websiteLink="https://pinely.app/"
-          closeFolder={props.closeFolder}
-          showModal={props.showModal}
-          folder={props.openFolder}
+          addModal={addModal}
+          folder="Pinely"
         />
       </StyledApplicationWindowScreen>
     </StyledApplicationWindow>

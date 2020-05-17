@@ -1,98 +1,129 @@
-import React from "react";
-import styled from "styled-components";
-import AnswerScreen from "./StyledAnswerScreen";
-import Answers from "./Answers";
-import RightArrow from "../../Icons/right-arrow.png";
+import React, { useContext, useState, useEffect } from 'react';
+import styled from 'styled-components';
+import AnswerScreen from './StyledAnswerScreen';
+import Answers from './Answers';
+import RightArrow from '../../Icons/right-arrow.png';
+import ApplicationWindowBar from '../../Reusable-Components/ApplicationWindow/ApplicationWindowBar';
+import Context from '../../ContextProvider/Context';
 
-class QuestionScreen extends React.Component {
-  state = {
-    computerAnswer: [],
-    inputValue: "",
-    directory: "",
-    doneTyping: true
-  };
-  componentDidMount = () => {
-    this.setState(st => ({
-      computerAnswer: [Answers[this.props.QuestionScreen].introduction]
-    }));
-  };
+const QuestionScreen = props => {
+  const { highlightApplication } = useContext(Context);
+  const [computerAnswer, setComputerAnswer] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+  const [directory, setDirectory] = useState('');
 
-  doneTyping = () => {
-    this.setState({ doneTyping: true });
-  };
-
-  startTyping = () => {
-    this.setState({ doneTyping: false });
-  };
-
-  onChangeHandler = event => {
-    this.setState({ inputValue: event.target.value });
-  };
-  askQuestion = event => {
+  useEffect(() => {
+    setComputerAnswer([Answers[props.QuestionScreen].introduction]);
+  }, []);
+  const askQuestion = event => {
     event.preventDefault();
-    let input = parseInt(this.state.inputValue);
-    if (this.state.directory || this.state.directory === 0) {
-      if (input < Answers[this.props.QuestionScreen].answers[this.state.directory].answers.length && input >= 0) {
+    let input = parseInt(inputValue);
+    if (directory || directory === 0) {
+      if (
+        input <
+          Answers[props.QuestionScreen].answers[directory].answers.length &&
+        input >= 0
+      ) {
         this.setState(st => ({
           computerAnswer: [
             ...st.computerAnswer,
-            Answers[this.props.QuestionScreen].answers[this.state.directory].answers[input]
+            Answers[props.QuestionScreen].answers[directory].answers[input]
           ]
         }));
-      } else if (input === Answers[this.props.QuestionScreen].answers[this.state.directory].answers.length) {
+      } else if (
+        input ===
+        Answers[props.QuestionScreen].answers[directory].answers.length
+      ) {
         this.setState(st => ({
-          computerAnswer: [...st.computerAnswer, Answers[this.props.QuestionScreen].introduction],
-          directory: ""
+          computerAnswer: [
+            ...st.computerAnswer,
+            Answers[props.QuestionScreen].introduction
+          ],
+          directory: ''
         }));
       }
     } else {
-      if (input <= Answers[this.props.QuestionScreen].answers.length - 1 && input >= 0) {
-        this.setState(st => ({
-          computerAnswer: [...st.computerAnswer, Answers[this.props.QuestionScreen].answers[input].introduction],
-          directory: input
-        }));
+      if (
+        input <= Answers[props.QuestionScreen].answers.length - 1 &&
+        input >= 0
+      ) {
+        setComputerAnswer([
+          computerAnswer,
+          Answers[props.QuestionScreen].answers[input].introduction
+        ]);
+        setDirectory(input);
       } else if (input === 3) {
-        this.props.closeModal(this.props.screen);
+        props.closeModal(props.screen);
       } else {
         this.setState(st => ({
-          computerAnswer: [...st.computerAnswer, "Invalid Input!!!"]
+          computerAnswer: [...st.computerAnswer, 'Invalid Input!!!']
         }));
       }
     }
-    this.setState({ inputValue: "" });
+    this.setState({ inputValue: '' });
   };
 
-  render() {
-    const style = this.state.doneTyping ? { transition: "ease-in 4s" } : { display: "none" };
-    return (
-      <StyledQuestionScreen>
-        <StyledComputerAnswers>
-          {this.state.computerAnswer.map(answer => (
-            <AnswerScreen
-              answer={answer}
-              QuestionScreen={this.props.QuestionScreen}
-              doneTyping={this.doneTyping}
-              startTyping={this.startTyping}
+  return (
+    <StyledApplicationWindow
+      key={props.applicationName}
+      onClick={e => {
+        if (e.target === e.currentTarget) {
+          highlightApplication('Pinely');
+        }
+      }}
+    >
+      <ApplicationWindowBar
+        applicationName="Pinely"
+        icon={props.icon}
+        iconAlt={props.iconAlt}
+        toggleApplication={props.toggleApplication}
+      />
+      <StyledApplicationWindowScreen>
+        <StyledQuestionScreen>
+          <StyledComputerAnswers>
+            {computerAnswer.map(answer => (
+              <AnswerScreen
+                answer={answer}
+                QuestionScreen={props.QuestionScreen}
+              />
+            ))}
+          </StyledComputerAnswers>
+          <StyledForm onSubmit={askQuestion}>
+            <StyledUserName>
+              User <StyledRightArrow src={RightArrow} alt="Right Arrow" />
+            </StyledUserName>
+            <StyledQuestionField
+              componentClass="textarea"
+              value={inputValue}
+              onChange={e => setInputValue(e.target.value)}
+              spellCheck="false"
             />
-          ))}
-        </StyledComputerAnswers>
-        <StyledForm onSubmit={this.askQuestion} style={style}>
-          <StyledUserName>
-            User <StyledRightArrow src={RightArrow} alt="Right Arrow" />
-          </StyledUserName>
-          <StyledQuestionField
-            componentClass="textarea"
-            value={this.state.inputValue}
-            onChange={this.onChangeHandler}
-            spellCheck="false"
-          />
-        </StyledForm>
-      </StyledQuestionScreen>
-    );
-  }
-}
+          </StyledForm>
+        </StyledQuestionScreen>
+      </StyledApplicationWindowScreen>
+    </StyledApplicationWindow>
+  );
+};
 
 export default QuestionScreen;
+
+const StyledApplicationWindow = styled.div`
+  margin: 0 auto;
+  position: absolute;
+  top: 20vh;
+  left: 30vw;
+  height: 40%;
+  width: 35%;
+  background: #bfc7c9;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-style: outset;
+`;
+
+const StyledApplicationWindowScreen = styled.div`
+  height: 94%;
+`;
 
 const StyledQuestionScreen = styled.div`
   background: black;
