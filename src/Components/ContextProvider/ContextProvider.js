@@ -1,8 +1,18 @@
-import React, { Children } from 'react';
+import React, { useState } from 'react';
 import Context from './Context';
 
 const ContextProvider = ({ children }) => {
-  return <Context.Provider>{children}</Context.Provider>;
+  const [modals, setModals] = useState([]);
+
+  const addModal = modal => {
+    setModals(prevState => [modal, ...prevState]);
+  };
+
+  return (
+    <Context.Provider value={{ modals: modals, addModal: addModal }}>
+      {children}
+    </Context.Provider>
+  );
 };
 
 export default ContextProvider;

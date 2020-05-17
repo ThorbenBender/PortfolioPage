@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import DesktopShortcut from '../../Reusable-Components/Shortcuts/DesktopShortCut';
 import OpenFolder from '../../Icons/OpenFolder.png';
 import AboutMe from '../../Icons/AboutMe.png';
+import Context from '../../ContextProvider/Context';
 
 function DesktopScreenTop(props) {
+  const { addModal } = useContext(Context);
   return (
     <StyledDesktopScreenTop>
       <DesktopShortcut
@@ -12,7 +14,7 @@ function DesktopScreenTop(props) {
         imgAlt="Pinely"
         shortcutName="Pinely"
         onClick={() => {
-          props.showModal('Pinely');
+          addModal('Pinely');
         }}
       />
       <DesktopShortcut

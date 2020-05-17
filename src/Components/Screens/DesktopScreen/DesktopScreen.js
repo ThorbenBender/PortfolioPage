@@ -1,26 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import DesktopScreenTop from './DesktopScreenTop';
 import TaskBar from './TaskBar';
 import styled from 'styled-components';
+import Context from '../../ContextProvider/Context';
+import Pinely from '../Pinely';
 
-class DesktopScreen extends React.Component {
-  render() {
-    return (
-      <StyledDesktopScreen>
-        {/* {this.props.modals.includes('Pinely') && (
-          <ApplicationWindow
-            closeModal={this.props.closeModal}
-            onFocus={this.props.onFocus}
-            index={this.props.modals.indexOf('Pinely')}
-            applicationName="Pinely"
-            icon={smallOpenFolder}
-            iconAlt="OpenFolder"
-            showModal={this.props.showModal}
-            toggleApplication={this.props.toggleApplication}
-            hiddenApplication={this.props.hiddenApplication}
-          />
-        )}
-        {this.props.modals.includes('Guidr') && (
+const DesktopScreen = props => {
+  const { modals } = useContext(Context);
+  return (
+    <StyledDesktopScreen>
+      {modals.includes('Pinely') && <Pinely />}
+      {/* {this.props.modals.includes('Guidr') && (
           <ApplicationWindow
             closeModal={this.props.closeModal}
             onFocus={this.props.onFocus}
@@ -107,12 +97,11 @@ class DesktopScreen extends React.Component {
             hiddenApplication={this.props.hiddenApplication}
           />
         )} */}
-        <DesktopScreenTop showModal={this.props.showModal} />
-        <TaskBar toggleApplication={this.props.toggleApplication} />
-      </StyledDesktopScreen>
-    );
-  }
-}
+      <DesktopScreenTop showModal={props.showModal} />
+      <TaskBar toggleApplication={props.toggleApplication} />
+    </StyledDesktopScreen>
+  );
+};
 
 export default DesktopScreen;
 
