@@ -5,13 +5,20 @@ import styled from 'styled-components';
 import Context from '../ContextProvider/Context';
 
 const Pinely = props => {
-  const { hiddenApplication } = useContext(Context);
-  console.log(hiddenApplication);
+  const { hiddenApplication, highlightApplication } = useContext(Context);
   const style = hiddenApplication.includes('Pinely')
     ? { display: 'none' }
     : { marginTop: `${props.index * 1.75}vw`, zIndex: props.index };
   return (
-    <StyledApplicationWindow key={props.applicationName} style={style}>
+    <StyledApplicationWindow
+      key={props.applicationName}
+      style={style}
+      onClick={e => {
+        if (e.target === e.currentTarget) {
+          highlightApplication('Pinely');
+        }
+      }}
+    >
       <ApplicationWindowBar
         applicationName="Pinely"
         icon={props.icon}

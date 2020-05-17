@@ -5,9 +5,17 @@ import styled from 'styled-components';
 import Context from '../../ContextProvider/Context';
 
 function ApplicationWindowBar(props) {
-  const { closeModal, toggleApplication } = useContext(Context);
+  const { closeModal, toggleApplication, highlightApplication } = useContext(
+    Context
+  );
   return (
-    <StyledApplicationWindowBar>
+    <StyledApplicationWindowBar
+      onClick={e => {
+        if (e.target === e.currentTarget) {
+          highlightApplication(props.applicationName);
+        }
+      }}
+    >
       <StyledApplicationNameIcon src={props.icon} alt={props.iconAlt} />
       <StyledApplicationName>{props.applicationName}</StyledApplicationName>
       <StyledApplicationWindowBarIcon
@@ -18,7 +26,11 @@ function ApplicationWindowBar(props) {
       <StyledApplicationWindowBarIcon
         src={closeIcon}
         alt="close window icon"
-        onClick={() => closeModal(props.applicationName)}
+        onClick={e => {
+          if (e.target === e.currentTarget) {
+            closeModal(props.applicationName);
+          }
+        }}
       />
     </StyledApplicationWindowBar>
   );

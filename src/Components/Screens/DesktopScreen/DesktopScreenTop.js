@@ -22,7 +22,7 @@ function DesktopScreenTop(props) {
         imgAlt="Guidr"
         shortcutName="Guidr"
         onClick={() => {
-          props.showModal('Guidr');
+          addModal('Guidr');
         }}
       />
       <DesktopShortcut
@@ -30,7 +30,7 @@ function DesktopScreenTop(props) {
         imgAlt="Flocks"
         shortcutName="Flocks"
         onClick={() => {
-          props.showModal('Flocks');
+          addModal('Flocks');
         }}
       />
       {/* <DesktopShortcut

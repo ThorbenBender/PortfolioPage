@@ -6,7 +6,7 @@ const ContextProvider = ({ children }) => {
   const [hiddenApplication, setHiddenApplication] = useState([]);
 
   const addModal = modal => {
-    setModals(prevState => [modal, ...prevState]);
+    setModals(prevState => [...prevState, modal]);
   };
 
   const closeModal = modal => {
@@ -22,7 +22,11 @@ const ContextProvider = ({ children }) => {
     }
   };
 
-  console.log(hiddenApplication);
+  const highlightApplication = modal => {
+    let newModals = modals.filter(m => m !== modal);
+    newModals = [...newModals, modal];
+    setModals(newModals);
+  };
 
   return (
     <Context.Provider
@@ -31,7 +35,8 @@ const ContextProvider = ({ children }) => {
         addModal: addModal,
         closeModal: closeModal,
         toggleApplication: toggleApplication,
-        hiddenApplication: hiddenApplication
+        hiddenApplication: hiddenApplication,
+        highlightApplication: highlightApplication
       }}
     >
       {children}

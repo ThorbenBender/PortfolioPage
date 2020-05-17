@@ -4,12 +4,16 @@ import TaskBar from './TaskBar';
 import styled from 'styled-components';
 import Context from '../../ContextProvider/Context';
 import Pinely from '../Pinely';
+import Guidr from '../Guidr';
+import Flocks from '../Flocks';
 
 const DesktopScreen = props => {
   const { modals } = useContext(Context);
   return (
     <StyledDesktopScreen>
-      {modals.includes('Pinely') && <Pinely />}
+      {modals.includes('Pinely') && <Pinely index={modals.indexOf('Pinely')} />}
+      {modals.includes('Guidr') && <Guidr index={modals.indexOf('Guidr')} />}
+      {modals.includes('Flocks') && <Flocks index={modals.indexOf('Flocks')} />}
       {/* {this.props.modals.includes('Guidr') && (
           <ApplicationWindow
             closeModal={this.props.closeModal}
