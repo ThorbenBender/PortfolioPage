@@ -6,7 +6,9 @@ const ContextProvider = ({ children }) => {
   const [hiddenApplication, setHiddenApplication] = useState([]);
 
   const addModal = modal => {
-    setModals(prevState => [...prevState, modal]);
+    if (!modals.includes(modal)) {
+      setModals(prevState => [...prevState, modal]);
+    }
   };
 
   const closeModal = modal => {
