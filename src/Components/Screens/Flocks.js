@@ -3,6 +3,7 @@ import ApplicationWindowBar from '../Reusable-Components/ApplicationWindow/Appli
 import ProjectFolder from './ProjectsScreen/ProjectFolder';
 import styled from 'styled-components';
 import Context from '../ContextProvider/Context';
+import Draggable from 'react-draggable';
 
 const Flocks = props => {
   const { hiddenApplication, highlightApplication, addModal } = useContext(
@@ -12,28 +13,30 @@ const Flocks = props => {
     ? { display: 'none' }
     : { marginTop: `${props.index * 1.75}vw`, zIndex: props.index };
   return (
-    <StyledApplicationWindow
-      key={props.applicationName}
-      style={style}
-      onClick={e => {
-        if (e.target === e.currentTarget) {
-          highlightApplication('Flocks');
-        }
-      }}
-    >
-      <ApplicationWindowBar
-        applicationName="Flocks"
-        icon={props.icon}
-        iconAlt={props.iconAlt}
-      />
-      <StyledApplicationWindowScreen>
-        <ProjectFolder
-          githubLink="https://github.com/flocks1"
-          folder="Flocks"
-          addModal={addModal}
+    <Draggable>
+      <StyledApplicationWindow
+        key={props.applicationName}
+        style={style}
+        onClick={e => {
+          if (e.target === e.currentTarget) {
+            highlightApplication('Flocks');
+          }
+        }}
+      >
+        <ApplicationWindowBar
+          applicationName="Flocks"
+          icon={props.icon}
+          iconAlt={props.iconAlt}
         />
-      </StyledApplicationWindowScreen>
-    </StyledApplicationWindow>
+        <StyledApplicationWindowScreen>
+          <ProjectFolder
+            githubLink="https://github.com/flocks1"
+            folder="Flocks"
+            addModal={addModal}
+          />
+        </StyledApplicationWindowScreen>
+      </StyledApplicationWindow>
+    </Draggable>
   );
 };
 

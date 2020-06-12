@@ -3,6 +3,7 @@ import ApplicationWindowBar from '../Reusable-Components/ApplicationWindow/Appli
 import ProjectFolder from './ProjectsScreen/ProjectFolder';
 import styled from 'styled-components';
 import Context from '../ContextProvider/Context';
+import Draggable from 'react-draggable';
 
 const Guidr = props => {
   const { hiddenApplication, highlightApplication, addModal } = useContext(
@@ -12,29 +13,31 @@ const Guidr = props => {
     ? { display: 'none' }
     : { marginTop: `${props.index * 1.75}vw`, zIndex: props.index };
   return (
-    <StyledApplicationWindow
-      key={props.applicationName}
-      style={style}
-      onClick={e => {
-        if (e.target === e.currentTarget) {
-          highlightApplication('Guidr');
-        }
-      }}
-    >
-      <ApplicationWindowBar
-        applicationName="Guidr"
-        icon={props.icon}
-        iconAlt={props.iconAlt}
-      />
-      <StyledApplicationWindowScreen>
-        <ProjectFolder
-          githubLink="https://github.com/guidrbuildweek"
-          websiteLink="https://guidr-9ca16.web.app/login"
-          folder="Guidr"
-          addModal={addModal}
+    <Draggable>
+      <StyledApplicationWindow
+        key={props.applicationName}
+        style={style}
+        onClick={e => {
+          if (e.target === e.currentTarget) {
+            highlightApplication('Guidr');
+          }
+        }}
+      >
+        <ApplicationWindowBar
+          applicationName="Guidr"
+          icon={props.icon}
+          iconAlt={props.iconAlt}
         />
-      </StyledApplicationWindowScreen>
-    </StyledApplicationWindow>
+        <StyledApplicationWindowScreen>
+          <ProjectFolder
+            githubLink="https://github.com/guidrbuildweek"
+            websiteLink="https://guidr-9ca16.web.app/login"
+            folder="Guidr"
+            addModal={addModal}
+          />
+        </StyledApplicationWindowScreen>
+      </StyledApplicationWindow>
+    </Draggable>
   );
 };
 

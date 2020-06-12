@@ -3,6 +3,7 @@ import ApplicationWindowBar from '../Reusable-Components/ApplicationWindow/Appli
 import ProjectFolder from './ProjectsScreen/ProjectFolder';
 import styled from 'styled-components';
 import Context from '../ContextProvider/Context';
+import Draggable from 'react-draggable';
 
 const Pinely = props => {
   const { hiddenApplication, highlightApplication, addModal } = useContext(
@@ -12,30 +13,32 @@ const Pinely = props => {
     ? { display: 'none' }
     : { marginTop: `${props.index * 1.75}vw`, zIndex: props.index };
   return (
-    <StyledApplicationWindow
-      key={props.applicationName}
-      style={style}
-      onClick={e => {
-        if (e.target === e.currentTarget) {
-          highlightApplication('Pinely');
-        }
-      }}
-    >
-      <ApplicationWindowBar
-        applicationName="Pinely"
-        icon={props.icon}
-        iconAlt={props.iconAlt}
-        toggleApplication={props.toggleApplication}
-      />
-      <StyledApplicationWindowScreen>
-        <ProjectFolder
-          githubLink="https://github.com/labseu1-db"
-          websiteLink="https://pinely.app/"
-          addModal={addModal}
-          folder="Pinely"
+    <Draggable>
+      <StyledApplicationWindow
+        key={props.applicationName}
+        style={style}
+        onClick={e => {
+          if (e.target === e.currentTarget) {
+            highlightApplication('Pinely');
+          }
+        }}
+      >
+        <ApplicationWindowBar
+          applicationName="Pinely"
+          icon={props.icon}
+          iconAlt={props.iconAlt}
+          toggleApplication={props.toggleApplication}
         />
-      </StyledApplicationWindowScreen>
-    </StyledApplicationWindow>
+        <StyledApplicationWindowScreen>
+          <ProjectFolder
+            githubLink="https://github.com/labseu1-db"
+            websiteLink="https://pinely.app/"
+            addModal={addModal}
+            folder="Pinely"
+          />
+        </StyledApplicationWindowScreen>
+      </StyledApplicationWindow>
+    </Draggable>
   );
 };
 

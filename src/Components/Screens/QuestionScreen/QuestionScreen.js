@@ -5,6 +5,7 @@ import Answers from './Answers';
 import RightArrow from '../../Icons/right-arrow.png';
 import ApplicationWindowBar from '../../Reusable-Components/ApplicationWindow/ApplicationWindowBar';
 import Context from '../../ContextProvider/Context';
+import Draggable from 'react-draggable';
 
 const QuestionScreen = props => {
   const {
@@ -58,46 +59,48 @@ const QuestionScreen = props => {
   };
 
   return (
-    <StyledApplicationWindow
-      key={props.applicationName}
-      onClick={e => {
-        if (e.target === e.currentTarget) {
-          highlightApplication('Pinely');
-        }
-      }}
-      style={style}
-    >
-      <ApplicationWindowBar
-        applicationName={`Questions ${props.folder}`}
-        icon={props.icon}
-        iconAlt={props.iconAlt}
-        toggleApplication={toggleApplication}
-      />
-      <StyledApplicationWindowScreen>
-        <StyledQuestionScreen>
-          <StyledComputerAnswers>
-            {computerAnswer.map(answer => (
-              <AnswerScreen
-                answer={answer}
-                QuestionScreen={props.QuestionScreen}
+    <Draggable>
+      <StyledApplicationWindow
+        key={props.applicationName}
+        onClick={e => {
+          if (e.target === e.currentTarget) {
+            highlightApplication(`Questions ${props.folder}`);
+          }
+        }}
+        style={style}
+      >
+        <ApplicationWindowBar
+          applicationName={`Questions ${props.folder}`}
+          icon={props.icon}
+          iconAlt={props.iconAlt}
+          toggleApplication={toggleApplication}
+        />
+        <StyledApplicationWindowScreen>
+          <StyledQuestionScreen>
+            <StyledComputerAnswers>
+              {computerAnswer.map(answer => (
+                <AnswerScreen
+                  answer={answer}
+                  QuestionScreen={props.QuestionScreen}
+                />
+              ))}
+            </StyledComputerAnswers>
+            <StyledForm onSubmit={askQuestion}>
+              <StyledUserName>
+                User <StyledRightArrow src={RightArrow} alt="Right Arrow" />
+              </StyledUserName>
+              <StyledQuestionField
+                autoFocus
+                componentClass="textarea"
+                value={inputValue}
+                onChange={e => setInputValue(e.target.value)}
+                spellCheck="false"
               />
-            ))}
-          </StyledComputerAnswers>
-          <StyledForm onSubmit={askQuestion}>
-            <StyledUserName>
-              User <StyledRightArrow src={RightArrow} alt="Right Arrow" />
-            </StyledUserName>
-            <StyledQuestionField
-              autoFocus
-              componentClass="textarea"
-              value={inputValue}
-              onChange={e => setInputValue(e.target.value)}
-              spellCheck="false"
-            />
-          </StyledForm>
-        </StyledQuestionScreen>
-      </StyledApplicationWindowScreen>
-    </StyledApplicationWindow>
+            </StyledForm>
+          </StyledQuestionScreen>
+        </StyledApplicationWindowScreen>
+      </StyledApplicationWindow>
+    </Draggable>
   );
 };
 

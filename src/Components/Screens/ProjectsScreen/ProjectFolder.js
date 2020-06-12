@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import WebsiteIcon from '../../Icons/Website2.png';
-import GitHubIcon from '../../Icons/Octocat.png';
 import QuestionIcon from '../../Icons/Questions.png';
 
 function ProjectFolder(props) {
@@ -15,7 +14,7 @@ function ProjectFolder(props) {
           </StyledProjectOptionAnchor>
         )}
         <StyledProjectOptionAnchor href={props.githubLink} target="_blank">
-          <StyledProjectOptionGithubIcon src={GitHubIcon} alt="Github Icon" />
+          <StyledProjectOptionIcon src={WebsiteIcon} alt="Website Icon" />
           <StyledProjectOptionName>Github</StyledProjectOptionName>
         </StyledProjectOptionAnchor>
         <StyledTaskBarOption
@@ -61,6 +60,7 @@ const StyledProjectOptionIcon = styled.img`
 
 const StyledProjectOptionName = styled.p`
   margin-top: 10px;
+  color: black;
 `;
 
 const StyledProjectOptionAnchor = styled.a`
@@ -71,9 +71,5 @@ const StyledProjectOptionAnchor = styled.a`
   height: 25%;
   width: 6%;
   align-items: center;
-`;
-
-const StyledProjectOptionGithubIcon = styled.img`
-  width: 80%;
-  height: 42.5%;
+  text-decoration: none;
 `;
