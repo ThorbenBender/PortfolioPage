@@ -5,7 +5,9 @@ import styled from 'styled-components';
 import Context from '../ContextProvider/Context';
 
 const Flocks = props => {
-  const { hiddenApplication, highlightApplication } = useContext(Context);
+  const { hiddenApplication, highlightApplication, addModal } = useContext(
+    Context
+  );
   const style = hiddenApplication.includes('Flocks')
     ? { display: 'none' }
     : { marginTop: `${props.index * 1.75}vw`, zIndex: props.index };
@@ -25,7 +27,11 @@ const Flocks = props => {
         iconAlt={props.iconAlt}
       />
       <StyledApplicationWindowScreen>
-        <ProjectFolder githubLink="https://github.com/flocks1" />
+        <ProjectFolder
+          githubLink="https://github.com/flocks1"
+          folder="Flocks"
+          addModal={addModal}
+        />
       </StyledApplicationWindowScreen>
     </StyledApplicationWindow>
   );

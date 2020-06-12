@@ -7,60 +7,54 @@ import ApplicationWindowBar from '../../Reusable-Components/ApplicationWindow/Ap
 import Context from '../../ContextProvider/Context';
 
 const QuestionScreen = props => {
-  const { highlightApplication } = useContext(Context);
+  const {
+    highlightApplication,
+    hiddenApplication,
+    toggleApplication
+  } = useContext(Context);
   const [computerAnswer, setComputerAnswer] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [directory, setDirectory] = useState('');
 
+  const style = hiddenApplication.includes(`Questions ${props.folder}`)
+    ? { display: 'none' }
+    : { marginTop: `${props.index * 1.75}vw`, zIndex: props.index };
+
   useEffect(() => {
-    setComputerAnswer([Answers[props.QuestionScreen].introduction]);
-  }, []);
+    setComputerAnswer([Answers[props.folder].introduction]);
+  }, [props.folder]);
   const askQuestion = event => {
     event.preventDefault();
     let input = parseInt(inputValue);
     if (directory || directory === 0) {
       if (
-        input <
-          Answers[props.QuestionScreen].answers[directory].answers.length &&
+        input < Answers[props.folder].answers[directory].answers.length &&
         input >= 0
       ) {
-        this.setState(st => ({
-          computerAnswer: [
-            ...st.computerAnswer,
-            Answers[props.QuestionScreen].answers[directory].answers[input]
-          ]
-        }));
+        setComputerAnswer(st => [
+          ...st,
+          Answers[props.folder].answers[directory].answers[input]
+        ]);
       } else if (
-        input ===
-        Answers[props.QuestionScreen].answers[directory].answers.length
+        input === Answers[props.folder].answers[directory].answers.length
       ) {
-        this.setState(st => ({
-          computerAnswer: [
-            ...st.computerAnswer,
-            Answers[props.QuestionScreen].introduction
-          ],
-          directory: ''
-        }));
+        setComputerAnswer(st => [...st, Answers[props.folder].introduction]);
+        setDirectory('');
       }
     } else {
-      if (
-        input <= Answers[props.QuestionScreen].answers.length - 1 &&
-        input >= 0
-      ) {
+      if (input <= Answers[props.folder].answers.length - 1 && input >= 0) {
         setComputerAnswer([
           computerAnswer,
-          Answers[props.QuestionScreen].answers[input].introduction
+          Answers[props.folder].answers[input].introduction
         ]);
         setDirectory(input);
       } else if (input === 3) {
         props.closeModal(props.screen);
       } else {
-        this.setState(st => ({
-          computerAnswer: [...st.computerAnswer, 'Invalid Input!!!']
-        }));
+        setComputerAnswer(st => [...st, 'Invalid Input!!!']);
       }
     }
-    this.setState({ inputValue: '' });
+    setInputValue('');
   };
 
   return (
@@ -71,12 +65,13 @@ const QuestionScreen = props => {
           highlightApplication('Pinely');
         }
       }}
+      style={style}
     >
       <ApplicationWindowBar
-        applicationName="Pinely"
+        applicationName={`Questions ${props.folder}`}
         icon={props.icon}
         iconAlt={props.iconAlt}
-        toggleApplication={props.toggleApplication}
+        toggleApplication={toggleApplication}
       />
       <StyledApplicationWindowScreen>
         <StyledQuestionScreen>
@@ -93,6 +88,7 @@ const QuestionScreen = props => {
               User <StyledRightArrow src={RightArrow} alt="Right Arrow" />
             </StyledUserName>
             <StyledQuestionField
+              autoFocus
               componentClass="textarea"
               value={inputValue}
               onChange={e => setInputValue(e.target.value)}

@@ -5,7 +5,9 @@ import styled from 'styled-components';
 import Context from '../ContextProvider/Context';
 
 const Guidr = props => {
-  const { hiddenApplication, highlightApplication } = useContext(Context);
+  const { hiddenApplication, highlightApplication, addModal } = useContext(
+    Context
+  );
   const style = hiddenApplication.includes('Guidr')
     ? { display: 'none' }
     : { marginTop: `${props.index * 1.75}vw`, zIndex: props.index };
@@ -28,6 +30,8 @@ const Guidr = props => {
         <ProjectFolder
           githubLink="https://github.com/guidrbuildweek"
           websiteLink="https://guidr-9ca16.web.app/login"
+          folder="Guidr"
+          addModal={addModal}
         />
       </StyledApplicationWindowScreen>
     </StyledApplicationWindow>

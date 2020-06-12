@@ -45,7 +45,7 @@ function DesktopScreenTop(props) {
         imgSource={AboutMe}
         imgAlt="About Me"
         shortcutName="About Me"
-        onClick={() => props.showModal('About Me')}
+        onClick={() => addModal('About Me')}
       />
       {/* <DesktopShortcut imgSource={OpenFolder} imgAlt="Perfect Fit Game" shortcutName="Perfect Fit" /> */}
     </StyledDesktopScreenTop>

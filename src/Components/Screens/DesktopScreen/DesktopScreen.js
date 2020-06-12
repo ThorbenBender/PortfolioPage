@@ -7,15 +7,37 @@ import Pinely from '../Pinely';
 import Guidr from '../Guidr';
 import Flocks from '../Flocks';
 import QuestionScreen from '../QuestionScreen/QuestionScreen';
+import AboutMeScreen from '../AboutMe/AboutMeScreen';
 
 const DesktopScreen = props => {
   const { modals } = useContext(Context);
+  console.log(modals);
   return (
     <StyledDesktopScreen>
       {modals.includes('Pinely') && <Pinely index={modals.indexOf('Pinely')} />}
       {modals.includes('Guidr') && <Guidr index={modals.indexOf('Guidr')} />}
       {modals.includes('Flocks') && <Flocks index={modals.indexOf('Flocks')} />}
-      {modals.includes('')}
+      {modals.includes('Questions Pinely') && (
+        <QuestionScreen
+          folder="Pinely"
+          index={modals.indexOf('Questions Pinely')}
+        />
+      )}
+      {modals.includes('Questions Guidr') && (
+        <QuestionScreen
+          folder="Guidr"
+          index={modals.indexOf('Questions Guidr')}
+        />
+      )}
+      {modals.includes('Questions Flocks') && (
+        <QuestionScreen
+          folder="Flocks"
+          index={modals.indexOf('Questions Flocks')}
+        />
+      )}
+      {modals.includes('About Me') && (
+        <AboutMeScreen index={modals.indexOf('About Me')} />
+      )}
       {/* {this.props.modals.includes('Guidr') && (
           <ApplicationWindow
             closeModal={this.props.closeModal}
