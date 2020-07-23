@@ -1,22 +1,36 @@
-import React from "react";
-import closeIcon from "../../Icons/close-button.png";
-import minimizeIcon from "../../Icons/minimize_window.png";
-import styled from "styled-components";
+import React, { useContext } from 'react';
+import closeIcon from '../../Icons/close-button.png';
+import minimizeIcon from '../../Icons/minimize_window.png';
+import styled from 'styled-components';
+import Context from '../../ContextProvider/Context';
 
 function ApplicationWindowBar(props) {
+  const { closeModal, toggleApplication, highlightApplication } = useContext(
+    Context
+  );
   return (
-    <StyledApplicationWindowBar>
+    <StyledApplicationWindowBar
+      onClick={e => {
+        if (e.target === e.currentTarget) {
+          highlightApplication(props.applicationName);
+        }
+      }}
+    >
       <StyledApplicationNameIcon src={props.icon} alt={props.iconAlt} />
       <StyledApplicationName>{props.applicationName}</StyledApplicationName>
       <StyledApplicationWindowBarIcon
         src={minimizeIcon}
         alt="minimize window icon"
-        onClick={() => props.toggleApplication(props.applicationName)}
+        onClick={() => toggleApplication(props.applicationName)}
       />
       <StyledApplicationWindowBarIcon
         src={closeIcon}
         alt="close window icon"
-        onClick={() => props.closeModal(props.applicationName)}
+        onClick={e => {
+          if (e.target === e.currentTarget) {
+            closeModal(props.applicationName);
+          }
+        }}
       />
     </StyledApplicationWindowBar>
   );
@@ -27,12 +41,8 @@ export default ApplicationWindowBar;
 const StyledApplicationWindowBar = styled.div`
   background: #0d0c8e; /* Old browsers */
   background: -moz-linear-gradient(top, #0d0c8e 0%, #0100aa 100%);
-  background: -webkit-linear-gradient(top, #0d0c8e 0%, #0100aa 100%); 
-  background: linear-gradient(
-    to bottom,
-    #0d0c8e 0%,
-    #0100aa 100%
-  );
+  background: -webkit-linear-gradient(top, #0d0c8e 0%, #0100aa 100%);
+  background: linear-gradient(to bottom, #0d0c8e 0%, #0100aa 100%);
   height: 2.5vh;
   display: flex;
   justify-content: flex-end;

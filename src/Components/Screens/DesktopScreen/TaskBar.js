@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import WindowsButton from "./TaskBarComponents/WindowsButton";
-import ContactMe from "./TaskBarComponents/ContactMe";
-import TimeDisplay from "./TaskBarComponents/TimeDisplay";
-import OpenApplications from "./TaskBarComponents/OpenApplications";
+import React from 'react';
+import styled from 'styled-components';
+import WindowsButton from './TaskBarComponents/WindowsButton';
+import ContactMe from './TaskBarComponents/ContactMe';
+import TimeDisplay from './TaskBarComponents/TimeDisplay';
+import OpenApplications from './TaskBarComponents/OpenApplications';
 
 function TaskBar(props) {
   return (
