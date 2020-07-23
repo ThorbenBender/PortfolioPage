@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Context from '../ContextProvider/Context';
 import Draggable from 'react-draggable';
 
-const Flocks = props => {
+const Flocks = (props) => {
   const { hiddenApplication, highlightApplication, addModal } = useContext(
     Context
   );
@@ -14,21 +14,19 @@ const Flocks = props => {
     : { marginTop: `${props.index * 1.75}vw`, zIndex: props.index };
   return (
     <Draggable>
-      <StyledApplicationWindow
-        key={props.applicationName}
-        style={style}
-        onClick={e => {
-          if (e.target === e.currentTarget) {
-            highlightApplication('Flocks');
-          }
-        }}
-      >
+      <StyledApplicationWindow key={props.applicationName} style={style}>
         <ApplicationWindowBar
           applicationName="Flocks"
           icon={props.icon}
           iconAlt={props.iconAlt}
         />
-        <StyledApplicationWindowScreen>
+        <StyledApplicationWindowScreen
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              highlightApplication('Flocks');
+            }
+          }}
+        >
           <ProjectFolder
             githubLink="https://github.com/flocks1"
             folder="Flocks"
