@@ -37,11 +37,7 @@ function DesktopScreenTop(props) {
         imgAlt="LinkedIn"
         shortcutName="LinkedIn"
         onClick={() => {
-          var redirectWindow = window.open(
-            'https://www.linkedin.com/in/thorben-bender/',
-            '_blank'
-          );
-          redirectWindow.location();
+          window.open('https://www.linkedin.com/in/thorben-bender/', '_blank');
         }}
       />
       <DesktopShortcut
@@ -49,23 +45,18 @@ function DesktopScreenTop(props) {
         imgAlt="Github"
         shortcutName="Github"
         onClick={() => {
-          var redirectWindow = window.open(
-            'https://github.com/thorbenbender',
-            '_blank'
-          );
-          redirectWindow.location();
+          window.open('https://github.com/thorbenbender', '_blank');
         }}
       />
       <DesktopShortcut
-        imgSource="https://storage.googleapis.com/multi-static-content/previews/artage-io-thumb-b8e5723076a74ca155c3f4981d7c027b.png"
+        imgSource="https://storage.googleapis.com/multi-static-content/previews/artage-io-thumb-d953eae04c477f608abfcd25bce21829.png"
         imgAlt="Resume"
         shortcutName="Resume"
         onClick={() => {
-          var redirectWindow = window.open(
-            'https://www.linkedin.com/in/thorben-bender/',
+          window.open(
+            'https://firebasestorage.googleapis.com/v0/b/portfolio-22183.appspot.com/o/Thorben%20Bender%20-%20Resume.pdf?alt=media&token=09575d9a-d1e3-4816-87a6-3faf9ece996d',
             '_blank'
           );
-          redirectWindow.location();
         }}
       />
       {/* <DesktopShortcut
