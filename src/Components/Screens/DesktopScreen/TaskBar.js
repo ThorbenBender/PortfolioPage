@@ -4,6 +4,7 @@ import WindowsButton from './TaskBarComponents/WindowsButton';
 import ContactMe from './TaskBarComponents/ContactMe';
 import TimeDisplay from './TaskBarComponents/TimeDisplay';
 import OpenApplications from './TaskBarComponents/OpenApplications';
+import ContactEmail from './TaskBarComponents/ContactEmail';
 
 function TaskBar(props) {
   return (
@@ -11,6 +12,7 @@ function TaskBar(props) {
       <WindowsButton />
       <ContactMe showModal={props.showModal} />
       <OpenApplications />
+      <ContactEmail />
       <TimeDisplay />
     </StyledTaskBar>
   );
