@@ -7,9 +7,8 @@ import Pinely from '../Pinely';
 import Guidr from '../Guidr';
 import Flocks from '../Flocks';
 import QuestionScreen from '../QuestionScreen/QuestionScreen';
-import AboutMeScreen from '../AboutMe/AboutMeScreen';
 
-const DesktopScreen = props => {
+const DesktopScreen = (props) => {
   const { modals } = useContext(Context);
   console.log(modals);
   return (
@@ -34,9 +33,6 @@ const DesktopScreen = props => {
           folder="Flocks"
           index={modals.indexOf('Questions Flocks')}
         />
-      )}
-      {modals.includes('About Me') && (
-        <AboutMeScreen index={modals.indexOf('About Me')} />
       )}
       {/* {this.props.modals.includes('Guidr') && (
           <ApplicationWindow

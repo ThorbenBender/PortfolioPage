@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import DesktopShortcut from '../../Reusable-Components/Shortcuts/DesktopShortCut';
 import OpenFolder from '../../Icons/OpenFolder.png';
-import AboutMe from '../../Icons/AboutMe.png';
 import Context from '../../ContextProvider/Context';
 
 function DesktopScreenTop(props) {
@@ -41,12 +40,6 @@ function DesktopScreenTop(props) {
           props.showModal("Projects");
         }}
       /> */}
-      <DesktopShortcut
-        imgSource={AboutMe}
-        imgAlt="About Me"
-        shortcutName="About Me"
-        onClick={() => addModal('About Me')}
-      />
       {/* <DesktopShortcut imgSource={OpenFolder} imgAlt="Perfect Fit Game" shortcutName="Perfect Fit" /> */}
     </StyledDesktopScreenTop>
   );
